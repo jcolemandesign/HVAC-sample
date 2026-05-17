@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #eef6fc;
+  --foreground: #273c5b;
+  --gradient-light: #fcfdfc;
+  --gradient-dark: #e9f0f6;
+  --pale-blue: #eef6fc;
+  --red: #cc0d0d;
+  --primary-blue: #273c5b;
+  --bright-blue: #169bd5;
+  --dark-blue: #152435;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: "Zalando Sans", sans-serif;
+  --font-expanded: "Zalando Sans Expanded", sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Zalando Sans", Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
+}
+
+.font-expanded {
+  font-family: "Zalando Sans Expanded", "Zalando Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.icon-mask {
+  display: inline-block;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+.icon-star {
+  width: 1.1rem;
+  height: 1.05rem;
+  mask-image: url("/icons-star.svg");
+  -webkit-mask-image: url("/icons-star.svg");
+}
+
+.icon-phone {
+  width: 1rem;
+  height: 1rem;
+  mask-image: url("/icons-phone.svg");
+  -webkit-mask-image: url("/icons-phone.svg");
+}
+
+.icon-nav-dropdown {
+  width: 0.65rem;
+  height: 0.35rem;
+  mask-image: url("/icons-nav-dropdown.svg");
+  -webkit-mask-image: url("/icons-nav-dropdown.svg");
+}
+
+.icon-next-arrow {
+  width: 1rem;
+  height: 0.72rem;
+  mask-image: url("/icons-next-arrow.svg");
+  -webkit-mask-image: url("/icons-next-arrow.svg");
+}
+
+.hero-primary-cta {
+  box-shadow:
+    0 0.5rem 0 rgba(21, 36, 53, 0.34),
+    0 1.35rem 2.25rem rgba(21, 36, 53, 0.38);
+}
+
+.hero-trust-marquee {
+  overflow: hidden;
+}
+
+.hero-trust-track {
+  width: max-content;
+  animation: hero-marquee 31.6s linear infinite;
+}
+
+.hero-trust-marquee:hover .hero-trust-track {
+  animation-play-state: paused;
+}
+
+@keyframes hero-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-trust-track {
+    animation: none;
+  }
 }

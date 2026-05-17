@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import heroImage from "../../public/HVAC-web-hero.jpg";
+import logo from "../../public/logo-temp.svg";
 
 export const metadata: Metadata = {
   title: "North Star HVAC | Local Heating and Cooling",
@@ -9,16 +12,34 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: "AC repair",
-    description: "Fast diagnostics, clear pricing, and same-day cooling fixes when the heat hits hard.",
+    title: "AC Repair",
+    description:
+      "Warm air, weak airflow, strange noises, leaks, frozen coils, or systems that won’t turn on.",
   },
   {
-    title: "Heating tune-ups",
-    description: "Seasonal furnace and heat pump maintenance that keeps utility bills under control.",
+    title: "Heating Repair",
+    description:
+      "Furnace, heat pump, or general heating issues when your home is not staying warm.",
   },
   {
-    title: "System installs",
-    description: "Right-sized replacements with efficient equipment options for homes and light commercial spaces.",
+    title: "Heat Pump Services",
+    description:
+      "Repair, maintenance, and replacement for heat pumps, especially relevant for NC homes.",
+  },
+  {
+    title: "System Replacement",
+    description:
+      "Warm air, weak airflow, strange noises, leaks, frozen coils, or systems that won’t turn on.",
+  },
+  {
+    title: "HVAC Maintenance",
+    description:
+      "Furnace, heat pump, or general heating issues when your home is not staying warm.",
+  },
+  {
+    title: "Emergency HVAC Service",
+    description:
+      "Repair, maintenance, and replacement for heat pumps, especially relevant for NC homes.",
   },
 ];
 
@@ -35,107 +56,166 @@ const reviews = [
   },
 ];
 
+const navigationItems = ["Services", "Service Areas", "About", "Reviews", "FAQ", "Contact"];
+
+const trustItems = [
+  { text: "4.9 rating from 180+ local homeowners", star: true },
+  { text: "Licensed & insured technicians" },
+  { text: "Same-day appointments available" },
+  { text: "Upfront pricing before work begins" },
+  { text: "Repairs on all major HVAC brands" },
+];
+
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f7faf8] text-slate-950">
-      <header className="border-b border-slate-200/80 bg-white/90">
-        <div className="mx-auto flex w-[min(calc(100dvw-2.5rem),72rem)] flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="text-xl font-bold tracking-tight text-slate-950">
-            North Star HVAC
+    <main className="min-h-screen overflow-x-hidden bg-[#eef6fc] text-[#273c5b]">
+      <header className="relative z-20 bg-[#273c5b] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
+        <div className="mx-auto flex w-[min(calc(100dvw-2rem),111rem)] flex-col gap-5 px-1 py-5 lg:flex-row lg:items-center">
+          <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
+            <Image src={logo} alt="North Star HVAC" className="h-auto w-52" priority />
           </Link>
-          <nav aria-label="Main navigation" className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-slate-700">
-            <Link className="transition hover:text-teal-700" href="/services">
-              Services
-            </Link>
-            <Link className="transition hover:text-teal-700" href="/about">
-              About
-            </Link>
-            <Link className="transition hover:text-teal-700" href="/contact">
-              Contact
-            </Link>
-          </nav>
-          <a
-            className="inline-flex h-11 w-full items-center justify-center rounded-md bg-teal-700 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-teal-800 sm:w-auto"
-            href="tel:+15550148222"
+          <nav
+            aria-label="Main navigation"
+            className="hidden flex-wrap gap-x-7 gap-y-2 text-[1.075rem] font-semibold text-white/86 md:flex lg:ml-12"
           >
-            Call (555) 014-8222
-          </a>
+            {navigationItems.map((item) => {
+              const hasDropdown = item === "Services" || item === "Service Areas";
+
+              return (
+                <Link
+                  key={item}
+                  className="inline-flex items-center gap-2 transition hover:text-white"
+                  href={item === "Contact" ? "/contact" : `#${item.toLowerCase().replaceAll(" ", "-")}`}
+                >
+                  {item}
+                  {hasDropdown ? (
+                    <span className="icon-mask icon-nav-dropdown text-[#169bd5]" aria-hidden="true" />
+                  ) : null}
+                </Link>
+              );
+            })}
+          </nav>
+          <div className="flex flex-col gap-[0.8rem] sm:flex-row lg:ml-auto">
+            <a
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-5 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
+              href="tel:+13365552121"
+            >
+              <span className="icon-mask icon-phone" aria-hidden="true" />
+              336-555-2121
+            </a>
+            <Link
+              className="inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(21,36,53,0.22)] transition hover:bg-[#b30b0b] sm:w-fit"
+              href="/contact"
+            >
+              Schedule Now
+            </Link>
+          </div>
         </div>
       </header>
 
-      <section className="overflow-hidden bg-white">
-        <div className="mx-auto grid w-[min(calc(100dvw-2.5rem),72rem)] gap-10 py-16 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
-          <div className="min-w-0">
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-              Local HVAC demo
+      <section className="relative overflow-hidden bg-[#273c5b]">
+        <div className="absolute right-0 top-0 h-[48rem] w-[85.333rem] max-w-none">
+          <Image
+            src={heroImage}
+            alt="North Star HVAC technician greeting a homeowner"
+            fill
+            className="object-cover object-right"
+            priority
+            sizes="1366px"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto flex w-[min(calc(100dvw-2rem),111rem)] py-14 sm:py-16 lg:min-h-[48rem] lg:items-center lg:py-16">
+          <div className="min-w-0 max-w-[50vw] overflow-hidden px-6 py-8 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] sm:px-9 sm:py-10 lg:px-12 lg:py-12">
+            <p className="max-w-full text-[clamp(0.76rem,0.78vw,0.9rem)] font-normal uppercase leading-6 tracking-[0.2em] text-white">
+              Local HVAC Service in Huntersville, NC
             </p>
-            <h1 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-              Comfortable homes, honest service, and quick HVAC help.
+            <h1 className="font-expanded mt-5 max-w-full text-[clamp(2.75rem,3.05vw,3.75rem)] font-extralight leading-[1.03] text-white">
+              Keep your home running at peak efficiency, season after season.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              North Star HVAC helps homeowners stay cool in summer, warm in winter,
-              and confident about every repair, tune-up, and replacement.
+            <p className="mt-6 max-w-[35ch] text-base font-normal leading-7 text-white sm:max-w-[44rem] sm:text-lg sm:leading-8">
+              Schedule AC repair, heating service, tune-ups, or system replacement
+              with local technicians who explain the issue clearly and give you
+              options before the work starts.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
-                className="inline-flex h-12 w-full items-center justify-center rounded-md bg-teal-700 px-6 text-base font-bold text-white shadow-sm transition hover:bg-teal-800 sm:w-auto"
+                className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#b30b0b] sm:w-auto"
                 href="/contact"
               >
-                Get a free quote
+                SCHEDULE NOW
               </Link>
-              <Link
-                className="inline-flex h-12 w-full items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-base font-bold text-slate-900 transition hover:border-teal-700 hover:text-teal-800 sm:w-auto"
-                href="/services"
+              <a
+                className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/80 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+                href="tel:+13365552121"
               >
-                View services
-              </Link>
+                <span className="icon-mask icon-phone" aria-hidden="true" />
+                336-555-2121
+              </a>
             </div>
           </div>
+        </div>
 
-          <div className="min-w-0 rounded-lg border border-slate-200 bg-slate-950 p-6 text-white shadow-xl sm:p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-              Same-day availability
-            </p>
-            <div className="mt-8 grid gap-5">
-              <div>
-                <p className="text-5xl font-bold">24/7</p>
-                <p className="mt-2 text-slate-300">Emergency response for urgent heating and cooling issues.</p>
+        <div className="hero-trust-marquee relative z-20 bg-[#273c5b] py-[1.375rem] text-white shadow-[0_-18px_34px_rgba(21,36,53,0.22)]">
+          <div className="hero-trust-track flex items-center">
+            {[...trustItems, ...trustItems].map((item, index) => (
+              <div
+                key={`${item.text}-${index}`}
+                className="font-expanded flex min-w-max items-center px-8 text-sm font-semibold uppercase tracking-[0.025em]"
+                aria-hidden={index >= trustItems.length ? "true" : undefined}
+              >
+                {item.star ? (
+                  <>
+                    <span>4.9</span>
+                    <span
+                      className="icon-mask icon-star mx-2 translate-y-[-0.08em] text-[#cc0d0d]"
+                      aria-hidden="true"
+                    />
+                    <span>rating from 180+ local homeowners</span>
+                  </>
+                ) : (
+                  item.text
+                )}
               </div>
-              <div className="grid gap-4 border-t border-white/15 pt-5 sm:grid-cols-2">
-                <div className="min-w-0">
-                  <p className="text-2xl font-bold">4.9</p>
-                  <p className="text-sm text-slate-300">Average rating</p>
-                </div>
-                <div className="min-w-0">
-                  <p className="text-2xl font-bold">15+</p>
-                  <p className="text-sm text-slate-300">Years serving local homes</p>
-                </div>
-              </div>
-              <div className="min-w-0 rounded-md bg-white p-5 text-slate-950">
-                <p className="text-sm font-semibold text-slate-600">Quote request</p>
-                <p className="mt-2 text-lg font-bold sm:text-xl">Book a no-pressure home comfort visit.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="services" className="mx-auto w-[min(calc(100dvw-2.5rem),72rem)] py-16">
-        <div className="max-w-2xl">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-            Services
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            Repairs, tune-ups, and installs without the runaround.
-          </h2>
-        </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <section id="services" className="bg-[#eef6fc] py-20 lg:py-24">
+        <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <h2 className="font-expanded max-w-[58rem] text-[clamp(2.3rem,3.1vw,4.2rem)] font-extralight leading-[1.04] text-[#273c5b]">
+              Repairs, tune-ups, and installs with fast, relaible service.
+            </h2>
+            <Link
+              className="inline-flex w-fit items-center gap-3 text-sm font-extrabold uppercase tracking-[0.08em] text-[#cc0d0d] transition hover:text-[#a90b0b]"
+              href="/services"
+            >
+              VIEW OUR SERVICES
+              <span className="icon-mask icon-next-arrow" aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
-            <article key={service.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-bold">{service.title}</h3>
-              <p className="mt-3 leading-7 text-slate-600">{service.description}</p>
+            <article
+              key={service.title}
+              className="flex min-h-[18.5rem] flex-col rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)]"
+            >
+              <h3 className="text-2xl font-extrabold text-[#273c5b]">{service.title}</h3>
+              <p className="mt-5 max-w-[31rem] text-lg font-medium leading-8 text-[#273c5b]/78">
+                {service.description}
+              </p>
+              <Link
+                className="mt-auto inline-flex w-fit items-center gap-3 pt-8 text-sm font-extrabold uppercase tracking-[0.08em] text-[#cc0d0d] transition hover:text-[#a90b0b]"
+                href="/services"
+              >
+                Learn More
+                <span className="icon-mask icon-next-arrow" aria-hidden="true" />
+              </Link>
             </article>
           ))}
+          </div>
         </div>
       </section>
 
