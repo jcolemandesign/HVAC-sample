@@ -6,6 +6,7 @@ import heroImage from "../../public/HVAC-web-hero.jpg";
 import logo from "../../public/logo-temp.svg";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
 import { AnimatedVan } from "./components/AnimatedVan";
+import { ReviewSlider } from "./components/ReviewSlider";
 import { WhyChooseGrid } from "./components/WhyChooseGrid";
 
 export const metadata: Metadata = {
@@ -367,6 +368,20 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="bg-[#273c5b] py-[6.5rem] text-white lg:py-[7.8rem]">
+        <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
+          <div className="mx-auto flex max-w-[62rem] flex-col items-center text-center">
+            <span className="icon-mask icon-review-stars mb-4 text-[#cc0d0d]" aria-hidden="true" />
+            <h2 className="display-heading text-white">Trusted locally</h2>
+            <p className="section-subheader mt-6 text-white/78">
+              Clear communication from the first call to the final test.
+            </p>
+          </div>
+
+          <ReviewSlider />
         </div>
       </section>
 
