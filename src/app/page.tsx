@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import mapImage from "../../public/map-web.jpg";
 import serviceImage from "../../public/HVAC-service-example.jpg";
 import heroImage from "../../public/HVAC-web-hero.jpg";
 import logo from "../../public/logo-temp.svg";
+import springSpecialImage from "../../public/springtime-special.jpg";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
 import { AnimatedVan } from "./components/AnimatedVan";
+import { FaqAccordion } from "./components/FaqAccordion";
 import { ReviewSlider } from "./components/ReviewSlider";
 import { WhyChooseGrid } from "./components/WhyChooseGrid";
+import { ZipLookup } from "./components/ZipLookup";
 
 export const metadata: Metadata = {
   title: "North Star HVAC | Local Heating and Cooling",
@@ -107,6 +111,82 @@ const processSteps = [
     description:
       "A technician diagnoses the issue and walks you through your options.",
   },
+];
+
+const serviceAreaColumns = [
+  ["Huntersville", "Cornelius", "Davidson", "Mooresville"],
+  ["Concord", "North Charlotte", "Lake Norman Area"],
+];
+
+const faqs = [
+  {
+    question: "How do I know if my HVAC system needs repair or replacement?",
+    answer:
+      "If your system is still fairly reliable and the issue is minor, a repair may be enough. Replacement may make more sense if the system is older, breaks down often, uses outdated parts, or struggles to keep your home comfortable. During the visit, we’ll inspect the system and explain what can be repaired now versus when replacement may be the smarter long-term option.",
+  },
+  {
+    question: "Why is my AC running but not cooling the house?",
+    answer:
+      "Common causes include a dirty filter, low refrigerant, a frozen coil, airflow problems, thermostat issues, or a failing part inside the outdoor unit. If the system is running constantly but the temperature is not dropping, it’s usually worth having it checked before the problem gets worse.",
+  },
+  {
+    question: "What should I check before calling for HVAC service?",
+    answer:
+      "Start with the simple stuff: make sure the thermostat is set to cooling or heating, check that the air filter is not clogged, confirm the breaker has not tripped, and make sure vents are open and not blocked. If everything looks normal and the system still is not working right, schedule a service visit.",
+  },
+  {
+    question: "How often should I schedule HVAC maintenance?",
+    answer:
+      "Most homes should have HVAC maintenance twice a year: once before cooling season and once before heating season. Regular maintenance helps catch worn parts, airflow issues, dirty coils, and other problems before they turn into bigger repairs.",
+  },
+  {
+    question: "Do you work on older HVAC systems?",
+    answer:
+      "Yes. We service older HVAC systems and can help you understand what is worth repairing and what may be nearing the end of its useful life. If parts are still available and the system is safe to operate, repair may be an option. If not, we’ll explain replacement options clearly without pressure.",
+  },
+  {
+    question: "What happens after I submit a service request?",
+    answer:
+      "After you submit a request, we’ll review the details and follow up by phone, text, or email to confirm the next step. If the issue is urgent, calling directly is usually the fastest option. Your request helps us understand the problem, location, and preferred appointment window before we reach out.",
+  },
+];
+
+const footerLinkColumns = [
+  {
+    title: "Services",
+    links: [
+      { label: "AC Repair", href: "/services" },
+      { label: "Heating Repair", href: "/services" },
+      { label: "Maintenance", href: "/services" },
+      { label: "Replacement", href: "/services" },
+      { label: "Emergency HVAC", href: "/services" },
+    ],
+  },
+  {
+    title: "Service Areas",
+    links: [
+      { label: "Huntersville", href: "#service-areas" },
+      { label: "Cornelius", href: "#service-areas" },
+      { label: "Davidson", href: "#service-areas" },
+      { label: "Mooresville", href: "#service-areas" },
+      { label: "North Charlotte", href: "#service-areas" },
+    ],
+  },
+  {
+    title: "Info",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Reviews", href: "#reviews" },
+      { label: "Frequently Asked", href: "#faq" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+];
+
+const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com", icon: "icon-linkedin" },
+  { label: "Facebook", href: "https://www.facebook.com", icon: "icon-facebook" },
+  { label: "Instagram", href: "https://www.instagram.com", icon: "icon-instagram" },
 ];
 
 export default function Home() {
@@ -384,6 +464,193 @@ export default function Home() {
           <ReviewSlider />
         </div>
       </section>
+
+      <section id="service-areas" className="bg-[#eef6fc] py-[6.5rem] text-[#273c5b] lg:py-[7.8rem]">
+        <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
+          <h2 className="display-heading mx-auto max-w-[74rem] text-center text-[#273c5b]">
+            Serving Huntersville and nearby North Charlotte Communities
+          </h2>
+        </div>
+
+        <div className="mx-auto mt-16 grid w-[min(calc(100dvw-2rem),111rem)] overflow-hidden lg:grid-cols-2">
+          <div className="flex items-center bg-[#eef6fc] px-6 py-10 sm:px-12 lg:px-12 lg:py-14 xl:px-16">
+            <div className="w-full">
+              <div className="grid max-w-[42rem] gap-x-10 gap-y-4 sm:grid-cols-2">
+                {serviceAreaColumns.map((column, columnIndex) => (
+                  <ul key={columnIndex} className="section-subheader grid self-start gap-4 text-[#273c5b]">
+                    {column.map((area) => (
+                      <li key={area}>{area}</li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+
+              <p className="tiny-subhead mt-10 text-[#273c5b]/78">
+                Not sure if we service your area?
+              </p>
+
+              <ZipLookup />
+            </div>
+          </div>
+
+          <div className="relative min-h-[28rem] overflow-hidden lg:min-h-[43rem]">
+            <Image
+              src={mapImage}
+              alt="North Star HVAC service area map"
+              fill
+              className="object-cover object-center"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#eef6fc] text-[#273c5b]">
+        <Image
+          src={springSpecialImage}
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 mx-auto grid min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] px-6 py-20 lg:grid-cols-2 lg:px-12 lg:py-24">
+          <div className="flex max-w-[45rem] flex-col justify-center">
+            <h2 className="display-heading text-[#273c5b]">Spring AC Tune-Up Special</h2>
+            <p className="section-subheader mt-6 text-[#273c5b]/86">
+              Get your cooling system checked before the first heat wave hits.
+            </p>
+            <p className="mt-6 max-w-[38rem] text-lg font-medium leading-8 text-[#273c5b]/78">
+              Includes airflow check, thermostat review, filter check, and system inspection.
+            </p>
+            <Link
+              className="hero-primary-cta mt-10 inline-flex h-14 w-fit items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+              href="/contact"
+            >
+              SCHEDULE A TUNE UP
+            </Link>
+          </div>
+          <div aria-hidden="true" />
+        </div>
+      </section>
+
+      <section id="faq" className="bg-[#eef6fc] py-[6.5rem] text-[#273c5b] lg:py-[7.8rem]">
+        <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
+          <h2 className="display-heading text-center text-[#273c5b]">Frequently Asked</h2>
+
+          <FaqAccordion faqs={faqs} />
+        </div>
+      </section>
+
+      <section className="bg-[#273c5b] px-6 pt-[6.5rem] text-white lg:px-12 lg:pt-[7.8rem]">
+        <div className="mx-auto flex w-[min(100%,74rem)] flex-col items-center text-center">
+          <h2 className="font-expanded max-w-[70rem] text-[clamp(2.9rem,4.65vw,4.35rem)] font-extralight leading-[1.02] text-white">
+            Need HVAC Help Today?
+          </h2>
+          <p className="section-subheader mt-6 max-w-[54rem] text-white/78">
+            Tell us what&apos;s going on and we&apos;ll get back to you as soon as possible.
+          </p>
+          <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
+              href="/contact"
+            >
+              REQUEST SERVICE
+            </Link>
+            <a
+              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+              href="tel:+13365552121"
+            >
+              <span className="icon-mask icon-phone" aria-hidden="true" />
+              336-555-2121
+            </a>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-20 h-px w-[min(100%,111rem)] bg-[#eef6fc]" />
+      </section>
+
+      <footer className="bg-[#273c5b] px-6 pb-16 pt-20 text-white lg:px-12 lg:pb-20 lg:pt-20">
+        <div className="mx-auto w-[min(100%,111rem)]">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(20rem,0.75fr)]">
+            <div>
+              <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
+                <Image src={logo} alt="North Star HVAC" className="h-auto w-72" />
+              </Link>
+              <p className="mt-9 max-w-[36rem] text-lg font-medium leading-8 text-white/78">
+                North Star HVAC provides reliable heating, cooling, and indoor comfort service for homeowners in Huntersville, Lake Norman, and North Charlotte.
+              </p>
+
+              <div className="mt-12 grid max-w-[45rem] gap-6 sm:grid-cols-3">
+                {footerLinkColumns.map((column) => (
+                  <div key={column.title}>
+                    <h3 className="section-subheader text-white">{column.title}</h3>
+                    <ul className="mt-5 grid gap-3 text-base font-medium text-white/74">
+                      {column.links.map((link) => (
+                        <li key={link.label}>
+                          <Link className="transition hover:text-white" href={link.href}>
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:justify-self-end">
+              <a className="section-subheader block text-white" href="tel:+13365552121">
+                336-555-2121
+              </a>
+              <a className="section-subheader mt-3 block text-white" href="mailto:Support@northstarhvac.com">
+                Support@northstarhvac.com
+              </a>
+
+              <div className="mt-9 text-lg font-medium leading-8 text-white/78">
+                <p>Monday-Friday: 8:00 AM-6:00 PM</p>
+                <p>Saturday: 9:00 AM-2:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
+
+              <div className="mt-8 flex items-center gap-5">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="inline-flex text-[#169bd5] transition hover:text-white"
+                  >
+                    <span className={`icon-mask icon-social ${social.icon}`} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+
+              <address className="mt-9 text-lg not-italic font-medium leading-8 text-white/78">
+                North Star HVAC
+                <br />
+                12814 Statesville Road, Suite 204
+                <br />
+                Huntersville, NC 28078
+              </address>
+            </div>
+          </div>
+
+          <div className="mt-16 flex flex-col gap-4 border-t border-[#eef6fc] pt-8 text-sm font-semibold text-white/72 sm:flex-row sm:items-center sm:justify-between">
+            <span>Licensed and Insured</span>
+            <Link className="underline underline-offset-4 transition hover:text-white" href="#reviews">
+              Google Reviews
+            </Link>
+            <Link className="underline underline-offset-4 transition hover:text-white" href="/privacy-policy">
+              Privacy Policy
+            </Link>
+          </div>
+
+          <p className="mt-8 text-sm font-medium text-white/62">
+            ©North Star HVAC 2026 All right reserved
+          </p>
+        </div>
+      </footer>
 
     </main>
   );
