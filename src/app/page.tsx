@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import serviceImage from "../../public/HVAC-service-example.jpg";
 import heroImage from "../../public/HVAC-web-hero.jpg";
 import logo from "../../public/logo-temp.svg";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
@@ -67,6 +68,15 @@ const trustItems = [
   { text: "Repairs on all major HVAC brands" },
 ];
 
+const requestItems = [
+  "No cool air",
+  "Weak airflow",
+  "Thermostat issues",
+  "Leaking around unit",
+  "Burning smell",
+  "System won’t turn on",
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#eef6fc] text-[#273c5b]">
@@ -105,7 +115,7 @@ export default function Home() {
               336-555-2121
             </a>
             <Link
-              className="inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(21,36,53,0.22)] transition hover:bg-[#b30b0b] sm:w-fit"
+              className="inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(21,36,53,0.22)] transition hover:bg-[#e11212] sm:w-fit"
               href="/contact"
             >
               Schedule Now
@@ -131,7 +141,7 @@ export default function Home() {
             <p className="max-w-full text-[clamp(0.76rem,0.78vw,0.9rem)] font-normal uppercase leading-6 tracking-[0.2em] text-white">
               Local HVAC Service in Huntersville, NC
             </p>
-            <h1 className="font-expanded mt-5 max-w-full text-[clamp(2.75rem,3.05vw,3.75rem)] font-extralight leading-[1.03] text-white">
+            <h1 className="display-heading mt-5 max-w-full text-white">
               Keep your home running at peak efficiency, season after season.
             </h1>
             <p className="mt-6 max-w-[35ch] text-base font-normal leading-7 text-white sm:max-w-[44rem] sm:text-lg sm:leading-8">
@@ -141,7 +151,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
-                className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#b30b0b] sm:w-auto"
+                className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
                 href="/contact"
               >
                 SCHEDULE NOW
@@ -187,11 +197,11 @@ export default function Home() {
         <AnimatedSunburst />
         <div className="relative z-10 mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div data-services-intro className="grid gap-5 xl:grid-cols-3 xl:items-center">
-            <h2 className="font-expanded max-w-[58rem] text-[clamp(2.3rem,3.1vw,4.2rem)] font-extralight leading-[1.04] text-[#273c5b] xl:col-span-2">
+            <h2 className="display-heading max-w-[58rem] text-[#273c5b] xl:col-span-2">
               Repairs, tune-ups, and installs with fast, relaible service.
             </h2>
             <Link
-              className="font-expanded inline-flex w-fit items-center justify-self-start gap-3 border-b-2 border-[#152435] pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b] xl:justify-self-center"
+              className="service-view-link font-expanded inline-flex w-fit items-center justify-self-start gap-3 pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b] xl:justify-self-center"
               href="/services"
             >
               VIEW OUR SERVICES
@@ -232,6 +242,45 @@ export default function Home() {
             </article>
           ))}
           </div>
+        </div>
+      </section>
+
+      <section id="service-request" className="grid min-h-[43rem] bg-[#273c5b] lg:grid-cols-2">
+        <div className="flex items-center bg-[#273c5b] px-8 py-20 text-white sm:px-12 lg:py-24 lg:pl-[max(3rem,calc((100vw-111rem)/2+3rem))] lg:pr-16 xl:pr-20">
+          <div className="w-full">
+            <h2 className="display-heading text-white">
+              How can we help?
+            </h2>
+            <p className="mt-8 text-xl font-medium leading-9 text-white/86">
+              AC not keeping up? Heat not turning on? Weird noise from the unit?
+              <br />
+              Tell us what’s going on and we’ll help you figure out the next step.
+            </p>
+            <ul className="mt-10 grid max-w-[42rem] gap-x-8 gap-y-5 sm:grid-cols-[max-content_max-content]">
+              {requestItems.map((item) => (
+                <li key={item} className="flex items-center gap-4 text-lg font-bold text-white">
+                  <span className="icon-mask icon-checkbox text-[#169bd5]" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link
+              className="mt-12 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(0,0,0,0.22)] transition hover:bg-[#e11212]"
+              href="/contact"
+            >
+              START A SERVICE REQUEST
+            </Link>
+          </div>
+        </div>
+        <div className="relative min-h-[28rem] overflow-hidden lg:min-h-[43rem]">
+          <Image
+            src={serviceImage}
+            alt="HVAC technician servicing an outdoor unit"
+            fill
+            className="object-cover object-center"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority={false}
+          />
         </div>
       </section>
 
