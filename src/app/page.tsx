@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import heroImage from "../../public/HVAC-web-hero.jpg";
 import logo from "../../public/logo-temp.svg";
+import { AnimatedSunburst } from "./components/AnimatedSunburst";
 
 export const metadata: Metadata = {
   title: "North Star HVAC | Local Heating and Cooling",
@@ -182,36 +183,51 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="bg-[#eef6fc] py-20 lg:py-24">
-        <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <h2 className="font-expanded max-w-[58rem] text-[clamp(2.3rem,3.1vw,4.2rem)] font-extralight leading-[1.04] text-[#273c5b]">
+      <section id="services" className="relative overflow-hidden bg-[#eef6fc] py-[6rem] lg:py-[7.2rem]">
+        <AnimatedSunburst />
+        <div className="relative z-10 mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
+          <div data-services-intro className="grid gap-5 xl:grid-cols-3 xl:items-center">
+            <h2 className="font-expanded max-w-[58rem] text-[clamp(2.3rem,3.1vw,4.2rem)] font-extralight leading-[1.04] text-[#273c5b] xl:col-span-2">
               Repairs, tune-ups, and installs with fast, relaible service.
             </h2>
             <Link
-              className="inline-flex w-fit items-center gap-3 text-sm font-extrabold uppercase tracking-[0.08em] text-[#cc0d0d] transition hover:text-[#a90b0b]"
+              className="font-expanded inline-flex w-fit items-center justify-self-start gap-3 border-b-2 border-[#152435] pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b] xl:justify-self-center"
               href="/services"
             >
               VIEW OUR SERVICES
-              <span className="icon-mask icon-next-arrow" aria-hidden="true" />
             </Link>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
             <article
               key={service.title}
-              className="flex min-h-[18.5rem] flex-col rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)]"
+              className="service-card group relative flex min-h-[18.5rem] cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)]"
             >
-              <h3 className="text-2xl font-extrabold text-[#273c5b]">{service.title}</h3>
+              <svg
+                className="service-card-arrow"
+                viewBox="0 0 33.261 33.349"
+                aria-hidden="true"
+              >
+                <path
+                  className="service-card-arrow-head"
+                  d="M2.628 1H26.583C30.265 1 32.261 3.996 32.261 7.678V30.633"
+                />
+                <path
+                  className="service-card-arrow-line"
+                  d="M1 32.349L30.545 2.804"
+                />
+              </svg>
+              <h3 className="font-expanded pr-14 text-2xl font-medium text-[#273c5b]">
+                {service.title}
+              </h3>
               <p className="mt-5 max-w-[31rem] text-lg font-medium leading-8 text-[#273c5b]/78">
                 {service.description}
               </p>
               <Link
-                className="mt-auto inline-flex w-fit items-center gap-3 pt-8 text-sm font-extrabold uppercase tracking-[0.08em] text-[#cc0d0d] transition hover:text-[#a90b0b]"
+                className="mt-auto inline-flex w-fit pt-8 text-sm font-extrabold uppercase tracking-[0.08em] text-[#152435] transition hover:text-[#273c5b]"
                 href="/services"
               >
                 Learn More
-                <span className="icon-mask icon-next-arrow" aria-hidden="true" />
               </Link>
             </article>
           ))}
