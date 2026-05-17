@@ -5,6 +5,8 @@ import serviceImage from "../../public/HVAC-service-example.jpg";
 import heroImage from "../../public/HVAC-web-hero.jpg";
 import logo from "../../public/logo-temp.svg";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
+import { AnimatedVan } from "./components/AnimatedVan";
+import { WhyChooseGrid } from "./components/WhyChooseGrid";
 
 export const metadata: Metadata = {
   title: "North Star HVAC | Local Heating and Cooling",
@@ -45,19 +47,6 @@ const services = [
   },
 ];
 
-const reviews = [
-  {
-    quote:
-      "They showed up on time, explained the repair, and had our air running before dinner.",
-    name: "Megan R.",
-  },
-  {
-    quote:
-      "Straightforward estimate, tidy install, and no pressure. Exactly what we needed.",
-    name: "Carlos M.",
-  },
-];
-
 const navigationItems = ["Services", "Service Areas", "About", "Reviews", "FAQ", "Contact"];
 
 const trustItems = [
@@ -75,6 +64,48 @@ const requestItems = [
   "Leaking around unit",
   "Burning smell",
   "System won’t turn on",
+];
+
+const reasons = [
+  {
+    title: "Clear Recommendations",
+    description:
+      "We explain what’s happening, what can wait, and what needs attention now.",
+  },
+  {
+    title: "No-pressure Options",
+    description:
+      "Repair, maintenance, and replacement recommendations based on your home and budget.",
+  },
+  {
+    title: "Fast Response",
+    description: "Same-day appointments are available when the schedule allows.",
+  },
+  {
+    title: "Local Team",
+    description:
+      "Serving homeowners around Huntersville, Cornelius, Mooresville, and North Charlotte.",
+  },
+];
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Request Service",
+    description: "Tell us what’s going on with your heating or cooling system.",
+  },
+  {
+    number: "2",
+    title: "We follow up",
+    description:
+      "Our team confirms the details and schedules the next available appointment.",
+  },
+  {
+    number: "3",
+    title: "Get comfortable again",
+    description:
+      "A technician diagnoses the issue and walks you through your options.",
+  },
 ];
 
 export default function Home() {
@@ -179,7 +210,7 @@ export default function Home() {
                   <>
                     <span>4.9</span>
                     <span
-                      className="icon-mask icon-star mx-2 translate-y-[-0.08em] text-[#cc0d0d]"
+                      className="icon-mask icon-star mx-2 translate-y-[-0.08em] text-[#ffffff]"
                       aria-hidden="true"
                     />
                     <span>rating from 180+ local homeowners</span>
@@ -193,7 +224,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="relative overflow-hidden bg-[#eef6fc] py-[6rem] lg:py-[7.2rem]">
+      <section id="services" className="relative overflow-hidden bg-[#eef6fc] pb-[7.4rem] pt-[7.6rem] lg:pb-[8.6rem] lg:pt-[9rem]">
         <AnimatedSunburst />
         <div className="relative z-10 mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div data-services-intro className="grid gap-5 xl:grid-cols-3 xl:items-center">
@@ -284,65 +315,61 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="reviews" className="bg-slate-950 py-16 text-white">
-        <div className="mx-auto w-[min(calc(100dvw-2.5rem),72rem)]">
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                Trusted locally
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                Clear communication from the first call to the final test.
-              </h2>
-              <p className="mt-5 leading-7 text-slate-300">
-                Licensed technicians, upfront options, protected work areas, and
-                service windows that respect the day you already had planned.
-              </p>
-            </div>
-            <div className="grid gap-5 md:grid-cols-2">
-              {reviews.map((review) => (
-                <figure key={review.name} className="rounded-lg bg-white p-6 text-slate-950">
-                  <blockquote className="leading-7 text-slate-700">
-                    &ldquo;{review.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-5 font-bold">{review.name}</figcaption>
-                </figure>
-              ))}
-            </div>
+      <section id="why-choose-us" className="bg-[#eef6fc] pb-[5.2rem] pt-[6rem] text-[#273c5b] lg:pb-[6.2rem] lg:pt-[7.2rem]">
+        <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
+          <div className="mx-auto flex max-w-[60rem] flex-col items-center text-center">
+            <h2 className="display-heading text-[#273c5b]">Why Choose Us</h2>
+            <p className="section-subheader mt-6 text-[#273c5b]/78">
+              Straightforward HVAC service without the runaround.
+            </p>
+            <Link
+              className="service-view-link font-expanded mt-9 inline-flex w-fit items-center pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b]"
+              href="/about"
+            >
+              ABOUT NORTH STAR
+            </Link>
+          </div>
+
+          <WhyChooseGrid reasons={reasons} />
+        </div>
+      </section>
+
+      <section id="how-it-works" className="overflow-hidden bg-[#eef6fc] pb-[6rem] pt-[5.2rem] text-[#273c5b] lg:pb-[7.2rem] lg:pt-[6.2rem]">
+        <div className="mx-auto grid w-[min(calc(100dvw-2rem),111rem)] gap-14 px-6 lg:grid-cols-2 lg:items-center lg:px-12">
+          <div className="min-w-0">
+            <h2 className="display-heading text-[#273c5b]">How it works</h2>
+            <p className="section-subheader mt-6 text-[#273c5b]/78">
+              Getting help is simple
+            </p>
+            <Link
+              className="mt-10 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(21,36,53,0.18)] transition hover:bg-[#e11212]"
+              href="/contact"
+            >
+              REQUEST SERVICE
+            </Link>
+            <AnimatedVan />
+          </div>
+
+          <div className="grid gap-10">
+            {processSteps.map((step) => (
+              <article key={step.number} className="grid grid-cols-[auto_1fr] gap-6">
+                <div className="font-expanded flex size-[3.4rem] items-center justify-center rounded-full bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] text-[2.05rem] font-medium leading-none text-[#273c5b] shadow-[0_12px_24px_rgba(21,36,53,0.08)]">
+                  {step.number}
+                </div>
+                <div>
+                  <h3 className="font-expanded text-[clamp(1.65rem,1.75vw,2.4rem)] font-normal leading-[1.08] text-[#273c5b]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-4 max-w-[43rem] text-lg font-medium leading-8 text-[#273c5b]/78">
+                    {step.description}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="mx-auto w-[min(calc(100dvw-2.5rem),72rem)] py-16">
-        <div className="grid gap-8 rounded-lg bg-teal-700 p-6 text-white sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-100">
-              Ready for comfort?
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              Schedule an HVAC quote for your home this week.
-            </h2>
-            <p className="mt-4 max-w-2xl leading-7 text-teal-50">
-              Tell us what is happening with your system and we will recommend the
-              simplest next step.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-            <a
-              className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-base font-bold text-teal-800 transition hover:bg-cyan-50"
-              href="tel:+15550148222"
-            >
-              Call now
-            </a>
-            <a
-              className="inline-flex h-12 items-center justify-center rounded-md border border-white/50 px-6 text-base font-bold text-white transition hover:bg-white/10"
-              href="mailto:hello@northstarhvac.example"
-            >
-              Email us
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
