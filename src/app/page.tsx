@@ -5,7 +5,7 @@ import mapImage from "../../public/map-web.jpg";
 import serviceImage from "../../public/HVAC-service-example.jpg";
 import heroImage from "../../public/HVAC-web-hero.jpg";
 import logo from "../../public/logo-temp.svg";
-import springSpecialImage from "../../public/springtime-special.jpg";
+import wrenImage from "../../public/wren.png";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
 import { AnimatedVan } from "./components/AnimatedVan";
 import { FaqAccordion } from "./components/FaqAccordion";
@@ -227,7 +227,7 @@ export default function Home() {
               336-555-2121
             </a>
             <Link
-              className="inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(21,36,53,0.22)] transition hover:bg-[#e11212] sm:w-fit"
+              className="hero-primary-cta inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-fit"
               href="/contact"
             >
               Schedule Now
@@ -237,7 +237,7 @@ export default function Home() {
       </header>
 
       <section className="relative overflow-hidden bg-[#273c5b]">
-        <div className="absolute right-0 top-0 h-[48rem] w-[85.333rem] max-w-none">
+        <div className="absolute right-0 top-0 h-[51rem] w-[85.333rem] max-w-none">
           <Image
             src={heroImage}
             alt="North Star HVAC technician greeting a homeowner"
@@ -248,7 +248,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-[min(calc(100dvw-2rem),111rem)] py-14 sm:py-16 lg:min-h-[48rem] lg:items-center lg:py-16">
+        <div className="relative z-10 mx-auto flex w-[min(calc(100dvw-2rem),111rem)] py-14 sm:py-16 lg:min-h-[51rem] lg:items-center lg:py-16">
           <div className="min-w-0 max-w-[50vw] overflow-hidden px-6 py-8 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] sm:px-9 sm:py-10 lg:px-12 lg:py-12">
             <p className="max-w-full text-[clamp(0.76rem,0.78vw,0.9rem)] font-normal uppercase leading-6 tracking-[0.2em] text-white">
               Local HVAC Service in Huntersville, NC
@@ -305,7 +305,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="relative overflow-hidden bg-[#eef6fc] pb-[7.4rem] pt-[7.6rem] lg:pb-[8.6rem] lg:pt-[9rem]">
+      <section id="services" className="relative overflow-hidden bg-[#eef6fc] pb-[8rem] pt-[8.2rem] lg:pb-[9.25rem] lg:pt-[9.7rem]">
         <AnimatedSunburst />
         <div className="relative z-10 mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div data-services-intro className="grid gap-5 xl:grid-cols-3 xl:items-center">
@@ -377,7 +377,7 @@ export default function Home() {
               ))}
             </ul>
             <Link
-              className="mt-12 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(0,0,0,0.22)] transition hover:bg-[#e11212]"
+              className="hero-primary-cta mt-12 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
               href="/contact"
             >
               START A SERVICE REQUEST
@@ -396,7 +396,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why-choose-us" className="bg-[#eef6fc] pb-[5.2rem] pt-[6rem] text-[#273c5b] lg:pb-[6.2rem] lg:pt-[7.2rem]">
+      <section id="why-choose-us" className="bg-[#eef6fc] pb-[4.3rem] pt-[6rem] text-[#273c5b] lg:pb-[5.2rem] lg:pt-[7.2rem]">
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div className="mx-auto flex max-w-[60rem] flex-col items-center text-center">
             <h2 className="display-heading text-[#273c5b]">Why Choose Us</h2>
@@ -415,7 +415,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className="overflow-hidden bg-[#eef6fc] pb-[6rem] pt-[5.2rem] text-[#273c5b] lg:pb-[7.2rem] lg:pt-[6.2rem]">
+      <section id="how-it-works" className="overflow-hidden bg-[#eef6fc] pb-[6rem] pt-[4.3rem] text-[#273c5b] lg:pb-[7.2rem] lg:pt-[5.2rem]">
         <div className="mx-auto grid w-[min(calc(100dvw-2rem),111rem)] gap-14 px-6 lg:grid-cols-2 lg:items-center lg:px-12">
           <div className="min-w-0">
             <h2 className="display-heading text-[#273c5b]">How it works</h2>
@@ -423,7 +423,7 @@ export default function Home() {
               Getting help is simple
             </p>
             <Link
-              className="mt-10 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(21,36,53,0.18)] transition hover:bg-[#e11212]"
+              className="hero-primary-cta mt-10 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
               href="/contact"
             >
               REQUEST SERVICE
@@ -451,7 +451,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="reviews" className="bg-[#273c5b] py-[6.5rem] text-white lg:py-[7.8rem]">
+      <section id="reviews" className="bg-[#273c5b] py-[5.7rem] text-white lg:py-[6.8rem]">
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div className="mx-auto flex max-w-[62rem] flex-col items-center text-center">
             <span className="icon-mask icon-review-stars mb-4 text-[#cc0d0d]" aria-hidden="true" />
@@ -505,16 +505,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#eef6fc] text-[#273c5b]">
-        <Image
-          src={springSpecialImage}
-          alt=""
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          aria-hidden="true"
-        />
-        <div className="relative z-10 mx-auto grid min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] px-6 py-20 lg:grid-cols-2 lg:px-12 lg:py-24">
+      <section className="overflow-hidden bg-[#eef6fc] text-[#273c5b]">
+        <div className="mx-auto grid min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-12 lg:py-24">
           <div className="flex max-w-[45rem] flex-col justify-center">
             <h2 className="display-heading text-[#273c5b]">Spring AC Tune-Up Special</h2>
             <p className="section-subheader mt-6 text-[#273c5b]/86">
@@ -530,7 +522,15 @@ export default function Home() {
               SCHEDULE A TUNE UP
             </Link>
           </div>
-          <div aria-hidden="true" />
+          <div className="relative flex min-h-[24rem] items-center justify-center lg:min-h-[34rem]">
+            <Image
+              src={wrenImage}
+              alt=""
+              className="h-auto max-h-[34rem] w-full object-contain"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              aria-hidden="true"
+            />
+          </div>
         </div>
       </section>
 

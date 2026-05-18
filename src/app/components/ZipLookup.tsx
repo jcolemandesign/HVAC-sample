@@ -26,7 +26,7 @@ export function ZipLookup() {
         />
         <button
           type="submit"
-          className="inline-flex h-14 w-fit cursor-pointer items-center justify-center rounded-[6px] bg-[#273c5b] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:bg-[#152435]"
+          className="hero-primary-cta inline-flex h-14 w-fit cursor-pointer items-center justify-center rounded-[6px] bg-[#273c5b] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#152435]"
         >
           CHECK ZIP CODE
         </button>
