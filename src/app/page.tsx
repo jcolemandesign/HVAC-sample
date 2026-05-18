@@ -4,6 +4,7 @@ import Link from "next/link";
 import mapImage from "../../public/map-web.jpg";
 import serviceImage from "../../public/HVAC-service-example.jpg";
 import heroImage from "../../public/HVAC-web-hero.jpg";
+import mobileHeroImage from "../../public/HVAC-mobile-web-hero.jpg";
 import logo from "../../public/logo-temp.svg";
 import wrenImage from "../../public/wren.png";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
@@ -191,12 +192,20 @@ const socialLinks = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#eef6fc] text-[#273c5b]">
-      <header className="relative z-20 bg-[#273c5b] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
-        <div className="mx-auto flex w-[min(calc(100dvw-2rem),111rem)] flex-col gap-5 px-1 py-5 lg:flex-row lg:items-center">
+    <main className="min-h-screen overflow-x-hidden bg-[#eef6fc] pb-[calc(4.75rem+env(safe-area-inset-bottom))] pt-[calc(4rem+env(safe-area-inset-top))] text-[#273c5b] md:pb-0 md:pt-0">
+      <header className="site-header z-50 bg-[var(--primary-blue)] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
+        <div className="site-header-inner mx-auto flex w-full items-center justify-between gap-5 px-4 md:w-[min(calc(100dvw-2rem),111rem)] md:flex-col md:items-start md:px-1 md:py-5 lg:flex-row lg:items-center">
           <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
-            <Image src={logo} alt="North Star HVAC" className="h-auto w-52" priority />
+            <Image src={logo} alt="North Star HVAC" className="h-auto w-44 md:w-52" priority />
           </Link>
+          <button
+            className="inline-flex h-11 items-center gap-2 rounded-[6px] px-2 text-[0.95rem] font-bold text-white md:hidden"
+            type="button"
+            aria-label="Open main menu"
+          >
+            Menu
+            <span className="icon-mask icon-nav-dropdown text-[#169bd5]" aria-hidden="true" />
+          </button>
           <nav
             aria-label="Main navigation"
             className="hidden flex-wrap gap-x-7 gap-y-2 text-[1.075rem] font-semibold text-white/86 md:flex lg:ml-12"
@@ -218,7 +227,7 @@ export default function Home() {
               );
             })}
           </nav>
-          <div className="flex flex-col gap-[0.8rem] sm:flex-row lg:ml-auto">
+          <div className="hidden flex-col gap-[0.8rem] sm:flex-row md:flex lg:ml-auto">
             <a
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-5 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
               href="tel:+13365552121"
@@ -236,32 +245,31 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden bg-[#273c5b]">
-        <div className="absolute right-0 top-0 h-[51rem] w-[85.333rem] max-w-none">
+      <section className="mobile-hero-section relative overflow-hidden bg-[var(--primary-blue)]">
+        <div className="absolute right-0 top-0 hidden h-[51rem] w-[85.333rem] max-w-none md:block">
           <Image
             src={heroImage}
             alt="North Star HVAC technician greeting a homeowner"
             fill
             className="object-cover object-right"
-            priority
             sizes="1366px"
           />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-[min(calc(100dvw-2rem),111rem)] py-14 sm:py-16 lg:min-h-[51rem] lg:items-center lg:py-16">
-          <div className="min-w-0 max-w-[50vw] overflow-hidden px-6 py-8 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] sm:px-9 sm:py-10 lg:px-12 lg:py-12">
+        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col md:w-[min(calc(100dvw-2rem),111rem)] md:py-16 lg:min-h-[51rem] lg:items-start lg:justify-center">
+          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:max-w-[50vw] md:px-9 md:py-10 lg:px-12 lg:py-12">
             <p className="max-w-full text-[clamp(0.76rem,0.78vw,0.9rem)] font-normal uppercase leading-6 tracking-[0.2em] text-white">
               Local HVAC Service in Huntersville, NC
             </p>
-            <h1 className="display-heading mt-5 max-w-full text-white">
+            <h1 className="hero-heading display-heading mt-4 max-w-full text-white md:mt-5">
               Keep your home running at peak efficiency, season after season.
             </h1>
-            <p className="mt-6 max-w-[35ch] text-base font-normal leading-7 text-white sm:max-w-[44rem] sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-full text-base font-normal leading-7 text-white md:mt-6 md:max-w-[44rem] md:text-lg md:leading-8">
               Schedule AC repair, heating service, tune-ups, or system replacement
               with local technicians who explain the issue clearly and give you
               options before the work starts.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-8 hidden flex-col gap-3 sm:flex-row sm:items-center md:flex">
               <Link
                 className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
                 href="/contact"
@@ -277,9 +285,19 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <div className="mobile-hero-image relative w-full md:hidden">
+            <Image
+              src={mobileHeroImage}
+              alt="North Star HVAC technician greeting a homeowner"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+          </div>
         </div>
 
-        <div className="hero-trust-marquee relative z-20 bg-[#273c5b] py-[1.375rem] text-white shadow-[0_-18px_34px_rgba(21,36,53,0.22)]">
+        <div className="hero-trust-marquee relative z-20 bg-[var(--primary-blue)] py-[1.375rem] text-white shadow-[0_-18px_34px_rgba(21,36,53,0.22)]">
           <div className="hero-trust-track flex items-center">
             {[...trustItems, ...trustItems].map((item, index) => (
               <div
@@ -304,6 +322,23 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-3 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] md:hidden">
+        <a
+          className="relative inline-flex h-12 items-center justify-center rounded-[6px] border-[2pt] border-white/70 px-9 text-sm font-extrabold text-white transition hover:border-white hover:bg-white/10"
+          href="tel:+13365552121"
+          aria-label="Call North Star HVAC"
+        >
+          <span className="icon-mask icon-phone absolute left-4" aria-hidden="true" />
+          336-555-2121
+        </a>
+        <Link
+          className="hero-primary-cta inline-flex h-12 min-w-0 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+          href="/contact"
+        >
+          SCHEDULE NOW
+        </Link>
+      </div>
 
       <section id="services" className="relative overflow-hidden bg-[#eef6fc] pb-[8rem] pt-[8.2rem] lg:pb-[9.25rem] lg:pt-[9.7rem]">
         <AnimatedSunburst />
