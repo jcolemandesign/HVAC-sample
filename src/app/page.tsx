@@ -5,8 +5,8 @@ import mapImage from "../../public/map-web.jpg";
 import serviceImage from "../../public/HVAC-service-example.jpg";
 import heroImage from "../../public/HVAC-web-hero.jpg";
 import mobileHeroImage from "../../public/HVAC-mobile-web-hero.jpg";
+import houseHvacImage from "../../public/house-hvac.jpg";
 import logo from "../../public/logo-temp.svg";
-import wrenImage from "../../public/wren.png";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
 import { AnimatedVan } from "./components/AnimatedVan";
 import { FaqAccordion } from "./components/FaqAccordion";
@@ -302,7 +302,7 @@ export default function Home() {
             {[...trustItems, ...trustItems].map((item, index) => (
               <div
                 key={`${item.text}-${index}`}
-                className="font-expanded flex min-w-max items-center px-8 text-sm font-semibold uppercase tracking-[0.025em]"
+                className="font-semiexpanded flex min-w-max items-center px-8 text-sm font-semibold uppercase tracking-[0.025em]"
                 aria-hidden={index >= trustItems.length ? "true" : undefined}
               >
                 {item.star ? (
@@ -348,7 +348,7 @@ export default function Home() {
               Repairs, tune-ups, and installs with fast, relaible service.
             </h2>
             <Link
-              className="service-view-link font-expanded inline-flex w-fit items-center justify-self-start gap-3 pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b] xl:justify-self-center"
+              className="service-view-link font-semiexpanded inline-flex w-fit items-center justify-self-start gap-3 pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b] xl:justify-self-center"
               href="/services"
             >
               VIEW OUR SERVICES
@@ -374,7 +374,7 @@ export default function Home() {
                   d="M1 32.349L30.545 2.804"
                 />
               </svg>
-              <h3 className="font-expanded pr-14 text-2xl font-medium text-[#273c5b]">
+              <h3 className="font-semiexpanded pr-14 text-2xl font-medium text-[#273c5b]">
                 {service.title}
               </h3>
               <p className="mt-5 max-w-[31rem] text-lg font-medium leading-8 text-[#273c5b]/78">
@@ -439,7 +439,7 @@ export default function Home() {
               Straightforward HVAC service without the runaround.
             </p>
             <Link
-              className="service-view-link font-expanded mt-9 inline-flex w-fit items-center pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b]"
+              className="service-view-link font-semiexpanded mt-9 inline-flex w-fit items-center pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b]"
               href="/about"
             >
               ABOUT NORTH STAR
@@ -458,7 +458,7 @@ export default function Home() {
               Getting help is simple
             </p>
             <Link
-              className="hero-primary-cta mt-10 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+              className="hero-primary-cta mt-10 hidden h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] lg:inline-flex"
               href="/contact"
             >
               REQUEST SERVICE
@@ -469,11 +469,11 @@ export default function Home() {
           <div className="grid gap-10">
             {processSteps.map((step) => (
               <article key={step.number} className="grid grid-cols-[auto_1fr] gap-6">
-                <div className="font-expanded flex size-[3.4rem] items-center justify-center rounded-full bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] text-[2.05rem] font-medium leading-none text-[#273c5b] shadow-[0_12px_24px_rgba(21,36,53,0.08)]">
+                <div className="font-semiexpanded flex size-[3.4rem] items-center justify-center rounded-full bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] text-[2.05rem] font-medium leading-none text-[#273c5b] shadow-[0_12px_24px_rgba(21,36,53,0.08)]">
                   {step.number}
                 </div>
                 <div>
-                  <h3 className="font-expanded text-[clamp(1.65rem,1.75vw,2.4rem)] font-normal leading-[1.08] text-[#273c5b]">
+                  <h3 className="font-semiexpanded text-[clamp(1.65rem,1.75vw,2.4rem)] font-normal leading-[1.08] text-[#273c5b]">
                     {step.title}
                   </h3>
                   <p className="mt-4 max-w-[43rem] text-lg font-medium leading-8 text-[#273c5b]/78">
@@ -482,6 +482,12 @@ export default function Home() {
                 </div>
               </article>
             ))}
+            <Link
+              className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] lg:hidden"
+              href="/contact"
+            >
+              REQUEST SERVICE
+            </Link>
           </div>
         </div>
       </section>
@@ -500,7 +506,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="service-areas" className="bg-[#eef6fc] py-[6.5rem] text-[#273c5b] lg:py-[7.8rem]">
+      <section id="service-areas" className="bg-[#eef6fc] pb-[6.5rem] pt-0 text-[#273c5b] md:pt-[6.5rem] lg:py-[7.8rem]">
+        <div className="relative mb-8 min-h-[22rem] overflow-hidden md:hidden">
+          <Image
+            src={mapImage}
+            alt="North Star HVAC service area map"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
+
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <h2 className="display-heading mx-auto max-w-[74rem] text-center text-[#273c5b]">
             Serving Huntersville and nearby North Charlotte Communities
@@ -528,7 +544,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[28rem] overflow-hidden lg:min-h-[43rem]">
+          <div className="relative hidden min-h-[28rem] overflow-hidden md:block lg:min-h-[43rem]">
             <Image
               src={mapImage}
               alt="North Star HVAC service area map"
@@ -540,9 +556,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-[#eef6fc] text-[#273c5b]">
-        <div className="mx-auto grid min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-12 lg:py-24">
-          <div className="flex max-w-[45rem] flex-col justify-center">
+      <section className="relative overflow-hidden bg-[#eef6fc] text-[#273c5b]">
+        <Image
+          src={houseHvacImage}
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-[#152435]/20" aria-hidden="true" />
+        <div className="relative z-20 mx-auto flex min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] items-center px-6 py-20 lg:px-12 lg:py-24">
+          <div className="flex max-w-[45rem] flex-col justify-center rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,rgba(252,253,252,0.96)_0%,rgba(233,240,246,0.92)_100%)] p-7 shadow-[0_28px_70px_rgba(21,36,53,0.28)] backdrop-blur-[2px] sm:p-10 lg:p-12">
             <h2 className="display-heading text-[#273c5b]">Spring AC Tune-Up Special</h2>
             <p className="section-subheader mt-6 text-[#273c5b]/86">
               Get your cooling system checked before the first heat wave hits.
@@ -557,15 +582,6 @@ export default function Home() {
               SCHEDULE A TUNE UP
             </Link>
           </div>
-          <div className="relative flex min-h-[24rem] items-center justify-center lg:min-h-[34rem]">
-            <Image
-              src={wrenImage}
-              alt=""
-              className="h-auto max-h-[34rem] w-full object-contain"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              aria-hidden="true"
-            />
-          </div>
         </div>
       </section>
 
@@ -579,7 +595,7 @@ export default function Home() {
 
       <section className="bg-[#273c5b] px-6 pt-[6.5rem] text-white lg:px-12 lg:pt-[7.8rem]">
         <div className="mx-auto flex w-[min(100%,74rem)] flex-col items-center text-center">
-          <h2 className="font-expanded max-w-[70rem] text-[clamp(2.9rem,4.65vw,4.35rem)] font-extralight leading-[1.02] text-white">
+          <h2 className="display-heading max-w-[70rem] text-white">
             Need HVAC Help Today?
           </h2>
           <p className="section-subheader mt-6 max-w-[54rem] text-white/78">

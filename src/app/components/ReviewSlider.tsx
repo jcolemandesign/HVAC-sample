@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const reviews = [
   {
@@ -89,26 +89,81 @@ const reviews = [
   },
 ];
 
-const reviewsPerSlide = 3;
-const slideCount = Math.ceil(reviews.length / reviewsPerSlide);
+const desktopReviewsPerSlide = 3;
 
 export function ReviewSlider() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const reviewsPerSlide = isMobile ? 1 : desktopReviewsPerSlide;
+  const slideCount = Math.ceil(reviews.length / reviewsPerSlide);
+  const activeSlideIndex = Math.min(activeSlide, slideCount - 1);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateViewportState = () => setIsMobile(mediaQuery.matches);
+
+    updateViewportState();
+    mediaQuery.addEventListener("change", updateViewportState);
+
+    return () => mediaQuery.removeEventListener("change", updateViewportState);
+  }, []);
 
   const goToPreviousSlide = () => {
-    setActiveSlide((current) => (current === 0 ? slideCount - 1 : current - 1));
+    setActiveSlide((current) => {
+      const normalizedCurrent = Math.min(current, slideCount - 1);
+
+      return normalizedCurrent === 0 ? slideCount - 1 : normalizedCurrent - 1;
+    });
   };
 
   const goToNextSlide = () => {
-    setActiveSlide((current) => (current === slideCount - 1 ? 0 : current + 1));
+    setActiveSlide((current) => {
+      const normalizedCurrent = Math.min(current, slideCount - 1);
+
+      return normalizedCurrent === slideCount - 1 ? 0 : normalizedCurrent + 1;
+    });
+  };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touch = event.changedTouches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touchStart = touchStartRef.current;
+
+    if (!touchStart) {
+      return;
+    }
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStart.x;
+    const deltaY = touch.clientY - touchStart.y;
+
+    touchStartRef.current = null;
+
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY)) {
+      return;
+    }
+
+    if (deltaX > 0) {
+      goToPreviousSlide();
+    } else {
+      goToNextSlide();
+    }
   };
 
   return (
     <div className="mt-16">
-      <div className="overflow-hidden">
+      <div
+        className="review-slider-viewport overflow-hidden"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+          style={{ transform: `translateX(-${activeSlideIndex * 100}%)` }}
         >
           {Array.from({ length: slideCount }).map((_, slideIndex) => (
             <div
@@ -123,7 +178,7 @@ export function ReviewSlider() {
                       <span className="icon-mask icon-review-quote text-[#169bd5]" aria-hidden="true" />
                       {review.quote}
                     </p>
-                    <p className="font-expanded mt-10 pl-[2.35rem] text-[1.15rem] font-normal leading-tight text-white">
+                    <p className="font-semiexpanded mt-10 pl-[2.35rem] text-[1.15rem] font-normal leading-tight text-white">
                       {review.name}
                     </p>
                     <p className="ml-[2.35rem] mt-3 border-t border-white/18 pt-4 text-sm font-semibold uppercase tracking-[0.08em] text-white/62">
@@ -136,21 +191,21 @@ export function ReviewSlider() {
         </div>
       </div>
 
-      <div className="mt-12 flex items-center justify-end gap-6">
+      <div className="review-slider-controls mt-12 flex items-center justify-end gap-6">
         <div className="flex items-center gap-3" aria-label="Review slides">
           {Array.from({ length: slideCount }).map((_, index) => (
             <button
               key={index}
               type="button"
               className="review-slider-dot"
-              data-active={index === activeSlide ? "true" : "false"}
+              data-active={index === activeSlideIndex ? "true" : "false"}
               aria-label={`Show review slide ${index + 1}`}
-              aria-current={index === activeSlide ? "true" : undefined}
+              aria-current={index === activeSlideIndex ? "true" : undefined}
               onClick={() => setActiveSlide(index)}
             />
           ))}
         </div>
-        <div className="flex items-center gap-0">
+        <div className="review-slider-arrows flex items-center gap-0">
           <button
             type="button"
             className="review-slider-button"

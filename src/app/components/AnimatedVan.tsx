@@ -10,23 +10,22 @@ export function AnimatedVan() {
 
   useEffect(() => {
     const van = vanRef.current;
-    const section = van?.closest("section");
 
-    if (!van || !section) {
+    if (!van) {
       return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.96) {
+        if (entry.isIntersecting) {
           setIsActive(true);
           observer.disconnect();
         }
       },
-      { threshold: [0.96] },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.24 },
     );
 
-    observer.observe(section);
+    observer.observe(van);
 
     return () => observer.disconnect();
   }, []);

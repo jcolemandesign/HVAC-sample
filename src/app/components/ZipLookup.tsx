@@ -39,7 +39,7 @@ export function ZipLookup() {
             Schedule your service today!
           </p>
           <Link
-            className="service-view-link font-expanded mt-7 inline-flex w-fit items-center pb-[1.1rem] text-[clamp(1.05rem,1vw,1.3rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b]"
+            className="service-view-link font-semiexpanded mt-7 inline-flex w-fit items-center pb-[1.1rem] text-[clamp(1.05rem,1vw,1.3rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b]"
             href="/contact"
           >
             REQUEST SERVICE
