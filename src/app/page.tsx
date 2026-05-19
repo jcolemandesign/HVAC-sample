@@ -230,7 +230,7 @@ export default function Home() {
           </nav>
           <div className="hidden flex-col gap-[0.8rem] sm:flex-row xl:ml-auto xl:flex">
             <a
-              className="phone-cta inline-flex h-10 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-4 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
+              className="phone-cta inline-flex h-10 w-full items-center justify-center gap-2 rounded-[6px] border-[1pt] border-white/70 bg-transparent px-4 text-sm text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
               href="tel:+13365552121"
             >
               <span className="icon-mask icon-phone" aria-hidden="true" />
@@ -277,7 +277,7 @@ export default function Home() {
                 SCHEDULE NOW
               </Link>
               <a
-                className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/80 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+                className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[1pt] border-white/80 bg-transparent px-7 text-base uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
                 href="tel:+13365552121"
               >
                 <span className="icon-mask icon-phone" aria-hidden="true" />
@@ -302,7 +302,7 @@ export default function Home() {
 
       <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-3 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] xl:hidden">
         <a
-          className="phone-cta relative inline-flex h-12 items-center justify-center rounded-[6px] border-[2pt] border-white/70 px-9 text-sm font-extrabold text-white transition hover:border-white hover:bg-white/10"
+          className="phone-cta relative inline-flex h-12 items-center justify-center rounded-[6px] border-[1pt] border-white/70 px-9 text-sm text-white transition hover:border-white hover:bg-white/10"
           href="tel:+13365552121"
           aria-label="Call North Star HVAC"
         >
@@ -587,7 +587,7 @@ export default function Home() {
               REQUEST SERVICE
             </Link>
             <a
-              className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+              className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[1pt] border-white/70 bg-transparent px-7 text-base uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
               href="tel:+13365552121"
             >
               <span className="icon-mask icon-phone" aria-hidden="true" />
