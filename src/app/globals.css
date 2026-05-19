@@ -174,9 +174,24 @@ body {
 }
 
 .hero-primary-cta {
+  max-width: 100%;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  font-size: clamp(0.72rem, 2.8vw, 1rem) !important;
   box-shadow:
     0.28rem 0.42rem 0.85rem rgba(21, 36, 53, 0.18),
     0.6rem 1rem 2rem rgba(21, 36, 53, 0.16);
+}
+
+.phone-cta {
+  max-width: 100%;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  font-size: clamp(0.72rem, 2.8vw, 1rem) !important;
+}
+
+.phone-cta .icon-phone {
+  flex: 0 0 auto;
 }
 
 .service-view-link {
@@ -234,10 +249,10 @@ body {
 
 .service-card-arrow {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
-  width: 2.08rem;
-  height: 2.08rem;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 1.872rem;
+  height: 1.872rem;
   color: var(--primary-blue);
   opacity: 0.5;
   overflow: visible;

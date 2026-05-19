@@ -35,7 +35,7 @@ export function ZipLookup() {
       {hasSubmitted ? (
         <div className="mt-8 rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)]">
           <p className="section-subheader text-[#273c5b]">You&apos;re in our service area</p>
-          <p className="mt-4 text-lg font-medium leading-8 text-[#273c5b]/78">
+          <p className="mt-4 text-lg font-light leading-8 text-[#273c5b]">
             Schedule your service today!
           </p>
           <Link

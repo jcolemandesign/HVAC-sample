@@ -46,7 +46,7 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
             </button>
             <div className="faq-panel">
               <div className="faq-answer">
-                <p className="text-lg font-medium leading-8">{faq.answer}</p>
+                <p className="text-lg font-light leading-8">{faq.answer}</p>
               </div>
             </div>
           </article>

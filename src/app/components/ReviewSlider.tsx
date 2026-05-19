@@ -174,7 +174,7 @@ export function ReviewSlider() {
                 .slice(slideIndex * reviewsPerSlide, slideIndex * reviewsPerSlide + reviewsPerSlide)
                 .map((review) => (
                   <article key={`${review.name}-${review.service}`} className="review-slide-item">
-                    <p className="review-quote text-lg font-medium leading-8 text-white/88">
+                    <p className="review-quote text-lg font-light leading-8 text-white">
                       <span className="icon-mask icon-review-quote text-[#169bd5]" aria-hidden="true" />
                       {review.quote}
                     </p>

@@ -50,10 +50,10 @@ export function WhyChooseGrid({ reasons }: WhyChooseGridProps) {
           style={{ transitionDelay: isVisible ? `${index * 150}ms` : "0ms" }}
         >
           <div className="w-full max-w-[35rem] text-left">
-            <h3 className="font-semiexpanded text-2xl font-medium text-[#273c5b]">
+            <h3 className="text-2xl font-light text-[#273c5b]">
               {reason.title}
             </h3>
-            <p className="font-semiexpanded mt-6 text-[clamp(1.35rem,1.5vw,2rem)] font-extralight leading-[1.22] text-[#273c5b]">
+            <p className="mt-5 text-lg font-light leading-8 text-[#273c5b]">
               {reason.description}
             </p>
           </div>

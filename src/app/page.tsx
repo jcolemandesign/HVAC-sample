@@ -208,7 +208,7 @@ export default function Home() {
           </button>
           <nav
             aria-label="Main navigation"
-            className="hidden flex-wrap gap-x-7 gap-y-2 text-[1.075rem] font-semibold text-white/86 md:flex lg:ml-12"
+            className="hidden flex-wrap gap-x-7 gap-y-2 text-[0.95rem] font-semibold text-white/86 md:flex lg:ml-12"
           >
             {navigationItems.map((item) => {
               const hasDropdown = item === "Services" || item === "Service Areas";
@@ -229,7 +229,7 @@ export default function Home() {
           </nav>
           <div className="hidden flex-col gap-[0.8rem] sm:flex-row md:flex lg:ml-auto">
             <a
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-5 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
+              className="phone-cta inline-flex h-12 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-5 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
               href="tel:+13365552121"
             >
               <span className="icon-mask icon-phone" aria-hidden="true" />
@@ -277,7 +277,7 @@ export default function Home() {
                 SCHEDULE NOW
               </Link>
               <a
-                className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/80 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+                className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/80 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
                 href="tel:+13365552121"
               >
                 <span className="icon-mask icon-phone" aria-hidden="true" />
@@ -325,7 +325,7 @@ export default function Home() {
 
       <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-3 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] md:hidden">
         <a
-          className="relative inline-flex h-12 items-center justify-center rounded-[6px] border-[2pt] border-white/70 px-9 text-sm font-extrabold text-white transition hover:border-white hover:bg-white/10"
+          className="phone-cta relative inline-flex h-12 items-center justify-center rounded-[6px] border-[2pt] border-white/70 px-9 text-sm font-extrabold text-white transition hover:border-white hover:bg-white/10"
           href="tel:+13365552121"
           aria-label="Call North Star HVAC"
         >
@@ -374,10 +374,10 @@ export default function Home() {
                   d="M1 32.349L30.545 2.804"
                 />
               </svg>
-              <h3 className="font-semiexpanded pr-14 text-2xl font-medium text-[#273c5b]">
+              <h3 className="pr-14 text-2xl font-light text-[#273c5b]">
                 {service.title}
               </h3>
-              <p className="mt-5 max-w-[31rem] text-lg font-medium leading-8 text-[#273c5b]/78">
+              <p className="mt-5 max-w-[31rem] text-lg font-light leading-8 text-[#273c5b]">
                 {service.description}
               </p>
               <Link
@@ -398,7 +398,7 @@ export default function Home() {
             <h2 className="display-heading text-white">
               How can we help?
             </h2>
-            <p className="mt-8 text-xl font-medium leading-9 text-white/86">
+            <p className="mt-8 text-lg font-light leading-8 text-white">
               AC not keeping up? Heat not turning on? Weird noise from the unit?
               <br />
               Tell us what’s going on and we’ll help you figure out the next step.
@@ -435,7 +435,7 @@ export default function Home() {
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div className="mx-auto flex max-w-[60rem] flex-col items-center text-center">
             <h2 className="display-heading text-[#273c5b]">Why Choose Us</h2>
-            <p className="section-subheader mt-6 text-[#273c5b]/78">
+            <p className="mt-6 text-lg font-light leading-8 text-[#273c5b]">
               Straightforward HVAC service without the runaround.
             </p>
             <Link
@@ -454,7 +454,7 @@ export default function Home() {
         <div className="mx-auto grid w-[min(calc(100dvw-2rem),111rem)] gap-14 px-6 lg:grid-cols-2 lg:items-center lg:px-12">
           <div className="min-w-0">
             <h2 className="display-heading text-[#273c5b]">How it works</h2>
-            <p className="section-subheader mt-6 text-[#273c5b]/78">
+            <p className="mt-6 text-lg font-light leading-8 text-[#273c5b]">
               Getting help is simple
             </p>
             <Link
@@ -476,7 +476,7 @@ export default function Home() {
                   <h3 className="font-semiexpanded text-[clamp(1.65rem,1.75vw,2.4rem)] font-normal leading-[1.08] text-[#273c5b]">
                     {step.title}
                   </h3>
-                  <p className="mt-4 max-w-[43rem] text-lg font-medium leading-8 text-[#273c5b]/78">
+                  <p className="mt-4 max-w-[43rem] text-lg font-light leading-8 text-[#273c5b]">
                     {step.description}
                   </p>
                 </div>
@@ -497,7 +497,7 @@ export default function Home() {
           <div className="mx-auto flex max-w-[62rem] flex-col items-center text-center">
             <span className="icon-mask icon-review-stars mb-4 text-[#cc0d0d]" aria-hidden="true" />
             <h2 className="display-heading text-white">Trusted locally</h2>
-            <p className="section-subheader mt-6 text-white/78">
+            <p className="mt-6 text-lg font-light leading-8 text-white">
               Clear communication from the first call to the final test.
             </p>
           </div>
@@ -569,10 +569,10 @@ export default function Home() {
         <div className="relative z-20 mx-auto flex min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] items-center px-6 py-20 lg:px-12 lg:py-24">
           <div className="flex max-w-[45rem] flex-col justify-center rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,rgba(252,253,252,0.96)_0%,rgba(233,240,246,0.92)_100%)] p-7 shadow-[0_28px_70px_rgba(21,36,53,0.28)] backdrop-blur-[2px] sm:p-10 lg:p-12">
             <h2 className="display-heading text-[#273c5b]">Spring AC Tune-Up Special</h2>
-            <p className="section-subheader mt-6 text-[#273c5b]/86">
+            <p className="mt-6 text-lg font-light leading-8 text-[#273c5b]">
               Get your cooling system checked before the first heat wave hits.
             </p>
-            <p className="mt-6 max-w-[38rem] text-lg font-medium leading-8 text-[#273c5b]/78">
+            <p className="mt-6 max-w-[38rem] text-lg font-light leading-8 text-[#273c5b]">
               Includes airflow check, thermostat review, filter check, and system inspection.
             </p>
             <Link
@@ -598,7 +598,7 @@ export default function Home() {
           <h2 className="display-heading max-w-[70rem] text-white">
             Need HVAC Help Today?
           </h2>
-          <p className="section-subheader mt-6 max-w-[54rem] text-white/78">
+          <p className="mt-6 max-w-[54rem] text-lg font-light leading-8 text-white">
             Tell us what&apos;s going on and we&apos;ll get back to you as soon as possible.
           </p>
           <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
@@ -609,7 +609,7 @@ export default function Home() {
               REQUEST SERVICE
             </Link>
             <a
-              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+              className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
               href="tel:+13365552121"
             >
               <span className="icon-mask icon-phone" aria-hidden="true" />
@@ -628,7 +628,7 @@ export default function Home() {
               <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
                 <Image src={logo} alt="North Star HVAC" className="h-auto w-72" />
               </Link>
-              <p className="mt-9 max-w-[36rem] text-lg font-medium leading-8 text-white/78">
+              <p className="mt-9 max-w-[36rem] text-lg font-light leading-8 text-white">
                 North Star HVAC provides reliable heating, cooling, and indoor comfort service for homeowners in Huntersville, Lake Norman, and North Charlotte.
               </p>
 
@@ -658,7 +658,7 @@ export default function Home() {
                 Support@northstarhvac.com
               </a>
 
-              <div className="mt-9 text-lg font-medium leading-8 text-white/78">
+              <div className="mt-9 text-lg font-light leading-8 text-white">
                 <p>Monday-Friday: 8:00 AM-6:00 PM</p>
                 <p>Saturday: 9:00 AM-2:00 PM</p>
                 <p>Sunday: Closed</p>
@@ -677,7 +677,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <address className="mt-9 text-lg not-italic font-medium leading-8 text-white/78">
+              <address className="mt-9 text-lg not-italic font-light leading-8 text-white">
                 North Star HVAC
                 <br />
                 12814 Statesville Road, Suite 204
