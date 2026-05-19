@@ -369,6 +369,10 @@ body {
   animation: service-link-underline 340ms ease-out forwards;
 }
 
+.service-card-grid {
+  align-items: stretch;
+}
+
 .why-card {
   opacity: 0;
   transform: translateY(0.85rem);
@@ -408,6 +412,7 @@ body {
 }
 
 .service-card {
+  height: 100%;
   transition:
     filter 220ms ease,
     box-shadow 220ms ease,
@@ -431,6 +436,12 @@ body {
   font-variation-settings: "wdth" 125;
   line-height: 1;
   letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+  .service-card-grid {
+    grid-auto-rows: minmax(0, 1fr);
+  }
 }
 
 .faq-item {
@@ -627,10 +638,6 @@ body {
   transform: scale(1.16);
 }
 
-.hero-trust-marquee:hover .hero-trust-track {
-  animation-play-state: paused;
-}
-
 @media (max-width: 767px) {
   [data-services-intro] .service-view-link {
     margin-top: 0.75rem;
@@ -771,9 +778,28 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1279px) {
+  .mobile-hero-section {
+    display: flex;
+    min-height: calc(100dvh - 4rem - 4.75rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    flex-direction: column;
+  }
+
+  .mobile-hero-main {
+    flex: 1 1 auto;
+  }
+
+  .mobile-hero-image {
+    flex: 1 1 auto;
+    height: clamp(22rem, 45vw, 34rem);
+    min-height: 22rem;
+  }
+}
+
+@media (min-width: 1280px) {
   .site-header {
-    position: relative;
+    position: sticky;
+    z-index: 50;
     padding-top: 0;
   }
 

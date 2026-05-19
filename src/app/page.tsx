@@ -10,6 +10,7 @@ import logo from "../../public/logo-temp.svg";
 import { AnimatedSunburst } from "./components/AnimatedSunburst";
 import { AnimatedVan } from "./components/AnimatedVan";
 import { FaqAccordion } from "./components/FaqAccordion";
+import { HeroTrustMarquee } from "./components/HeroTrustMarquee";
 import { ReviewSlider } from "./components/ReviewSlider";
 import { WhyChooseGrid } from "./components/WhyChooseGrid";
 import { ZipLookup } from "./components/ZipLookup";
@@ -53,7 +54,7 @@ const services = [
   },
 ];
 
-const navigationItems = ["Services", "Service Areas", "About", "Reviews", "FAQ", "Contact"];
+const navigationItems = ["Services", "Service Areas", "About", "Reviews"];
 
 const trustItems = [
   { text: "4.9 rating from 180+ local homeowners", star: true },
@@ -192,14 +193,14 @@ const socialLinks = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#eef6fc] pb-[calc(4.75rem+env(safe-area-inset-bottom))] pt-[calc(4rem+env(safe-area-inset-top))] text-[#273c5b] md:pb-0 md:pt-0">
+    <>
       <header className="site-header z-50 bg-[var(--primary-blue)] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
-        <div className="site-header-inner mx-auto flex w-full items-center justify-between gap-5 px-4 md:w-[min(calc(100dvw-2rem),111rem)] md:flex-col md:items-start md:px-1 md:py-5 lg:flex-row lg:items-center">
+        <div className="site-header-inner mx-auto flex w-full items-center justify-between gap-5 px-4 xl:w-[min(calc(100dvw-2rem),111rem)] xl:px-1 xl:py-3">
           <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
-            <Image src={logo} alt="North Star HVAC" className="h-auto w-44 md:w-52" priority />
+            <Image src={logo} alt="North Star HVAC" className="h-auto w-44 xl:w-44" priority />
           </Link>
           <button
-            className="inline-flex h-11 items-center gap-2 rounded-[6px] px-2 text-[0.95rem] font-bold text-white md:hidden"
+            className="inline-flex h-11 items-center gap-2 rounded-[6px] px-2 text-[0.95rem] font-bold text-white xl:hidden"
             type="button"
             aria-label="Open main menu"
           >
@@ -208,7 +209,7 @@ export default function Home() {
           </button>
           <nav
             aria-label="Main navigation"
-            className="hidden flex-wrap gap-x-7 gap-y-2 text-[0.95rem] font-semibold text-white/86 md:flex lg:ml-12"
+            className="hidden flex-wrap gap-x-7 gap-y-2 text-[0.95rem] font-semibold text-white/86 xl:ml-12 xl:flex"
           >
             {navigationItems.map((item) => {
               const hasDropdown = item === "Services" || item === "Service Areas";
@@ -227,16 +228,16 @@ export default function Home() {
               );
             })}
           </nav>
-          <div className="hidden flex-col gap-[0.8rem] sm:flex-row md:flex lg:ml-auto">
+          <div className="hidden flex-col gap-[0.8rem] sm:flex-row xl:ml-auto xl:flex">
             <a
-              className="phone-cta inline-flex h-12 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-5 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
+              className="phone-cta inline-flex h-10 w-full items-center justify-center gap-2 rounded-[6px] border-[2pt] border-white/70 bg-transparent px-4 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
               href="tel:+13365552121"
             >
               <span className="icon-mask icon-phone" aria-hidden="true" />
               336-555-2121
             </a>
             <Link
-              className="hero-primary-cta inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-fit"
+              className="hero-primary-cta inline-flex h-10 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-4 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-fit"
               href="/contact"
             >
               Schedule Now
@@ -245,8 +246,9 @@ export default function Home() {
         </div>
       </header>
 
+      <main className="min-h-screen overflow-x-clip bg-[#eef6fc] pb-[calc(4.75rem+env(safe-area-inset-bottom))] pt-[calc(4rem+env(safe-area-inset-top))] text-[#273c5b] xl:pb-0 xl:pt-0">
       <section className="mobile-hero-section relative overflow-hidden bg-[var(--primary-blue)]">
-        <div className="absolute right-0 top-0 hidden h-[51rem] w-[85.333rem] max-w-none md:block">
+        <div className="absolute right-0 top-0 hidden h-[51rem] w-[85.333rem] max-w-none xl:block">
           <Image
             src={heroImage}
             alt="North Star HVAC technician greeting a homeowner"
@@ -256,20 +258,18 @@ export default function Home() {
           />
         </div>
 
-        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col md:w-[min(calc(100dvw-2rem),111rem)] md:py-16 lg:min-h-[51rem] lg:items-start lg:justify-center">
-          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:max-w-[50vw] md:px-9 md:py-10 lg:px-12 lg:py-12">
+        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col md:w-[min(calc(100dvw-2rem),111rem)] md:py-16 xl:min-h-[51rem] xl:items-start xl:justify-center">
+          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:px-9 md:py-10 xl:max-w-[50vw] xl:px-12 xl:py-12">
             <p className="type-eyebrow max-w-full uppercase text-white">
               Local HVAC Service in Huntersville, NC
             </p>
             <h1 className="type-main-header mt-4 max-w-full text-white md:mt-5">
-              Keep your home running at peak efficiency, season after season.
+              Keep your home comfortable through every season.
             </h1>
             <p className="type-regular mt-5 max-w-full text-white md:mt-6 md:max-w-[44rem]">
-              Schedule AC repair, heating service, tune-ups, or system replacement
-              with local technicians who explain the issue clearly and give you
-              options before the work starts.
+              AC repair, heating service, and system replacement with straightforward recommendations and upfront pricing.
             </p>
-            <div className="mt-8 hidden flex-col gap-3 sm:flex-row sm:items-center md:flex">
+            <div className="mt-8 hidden flex-col gap-3 sm:flex-row sm:items-center xl:flex">
               <Link
                 className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
                 href="/contact"
@@ -285,7 +285,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="mobile-hero-image relative w-full md:hidden">
+          <div className="mobile-hero-image relative w-full xl:hidden">
             <Image
               src={mobileHeroImage}
               alt="North Star HVAC technician greeting a homeowner"
@@ -297,33 +297,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-trust-marquee relative z-20 bg-[var(--primary-blue)] py-[1.375rem] text-white shadow-[0_-18px_34px_rgba(21,36,53,0.22)]">
-          <div className="hero-trust-track flex items-center">
-            {[...trustItems, ...trustItems].map((item, index) => (
-              <div
-                key={`${item.text}-${index}`}
-                className="type-banner flex min-w-max items-center px-8 uppercase tracking-[0.025em]"
-                aria-hidden={index >= trustItems.length ? "true" : undefined}
-              >
-                {item.star ? (
-                  <>
-                    <span>4.9</span>
-                    <span
-                      className="icon-mask icon-star mx-2 translate-y-[-0.08em] text-[#ffffff]"
-                      aria-hidden="true"
-                    />
-                    <span>rating from 180+ local homeowners</span>
-                  </>
-                ) : (
-                  item.text
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+        <HeroTrustMarquee items={trustItems} />
       </section>
 
-      <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-3 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] md:hidden">
+      <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-3 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] xl:hidden">
         <a
           className="phone-cta relative inline-flex h-12 items-center justify-center rounded-[6px] border-[2pt] border-white/70 px-9 text-sm font-extrabold text-white transition hover:border-white hover:bg-white/10"
           href="tel:+13365552121"
@@ -354,11 +331,11 @@ export default function Home() {
               VIEW OUR SERVICES
             </Link>
           </div>
-          <div className="mt-12 grid items-start gap-5 md:mt-[3.45rem] md:grid-cols-2 xl:grid-cols-3">
+          <div className="service-card-grid mt-12 grid gap-5 md:mt-[3.45rem] md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
             <article
               key={service.title}
-              className="service-card group relative flex min-h-[18.5rem] cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)] md:p-[3.1rem]"
+              className="service-card group relative flex min-h-[18.5rem] cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)] md:p-[2.8rem]"
             >
               <svg
                 className="service-card-arrow"
@@ -377,11 +354,11 @@ export default function Home() {
               <h3 className="type-card-header pr-14 text-[#273c5b]">
                 {service.title}
               </h3>
-              <p className="type-regular mt-5 max-w-[31rem] text-[#273c5b] md:mt-14">
+              <p className="type-regular mt-5 max-w-[31rem] text-[#273c5b] md:mt-10">
                 {service.description}
               </p>
               <Link
-                className="service-card-learn-more mt-6 inline-flex w-fit text-[#152435] transition hover:text-[#273c5b] md:mt-16"
+                className="service-card-learn-more mt-6 inline-flex w-fit text-[#152435] transition hover:text-[#273c5b] md:mt-auto md:pt-6"
                 href="/services"
               >
                 Learn More
@@ -705,5 +682,6 @@ export default function Home() {
       </footer>
 
     </main>
+    </>
   );
 }
