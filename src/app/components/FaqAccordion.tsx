@@ -41,12 +41,12 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
               aria-expanded={isOpen}
               onClick={() => toggleItem(faq.question)}
             >
-              <span className="faq-question">{faq.question}</span>
+              <span className="faq-question type-large-text">{faq.question}</span>
               <span className="icon-mask icon-down-arrow" aria-hidden="true" />
             </button>
             <div className="faq-panel">
               <div className="faq-answer">
-                <p className="text-lg font-light leading-8">{faq.answer}</p>
+                <p className="type-regular">{faq.answer}</p>
               </div>
             </div>
           </article>

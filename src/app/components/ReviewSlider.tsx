@@ -174,14 +174,14 @@ export function ReviewSlider() {
                 .slice(slideIndex * reviewsPerSlide, slideIndex * reviewsPerSlide + reviewsPerSlide)
                 .map((review) => (
                   <article key={`${review.name}-${review.service}`} className="review-slide-item">
-                    <p className="review-quote text-lg font-light leading-8 text-white">
+                    <p className="review-quote type-regular text-white">
                       <span className="icon-mask icon-review-quote text-[#169bd5]" aria-hidden="true" />
                       {review.quote}
                     </p>
-                    <p className="font-semiexpanded mt-10 pl-[2.35rem] text-[1.15rem] font-normal leading-tight text-white">
+                    <p className="type-large-text mt-10 pl-[2.35rem] text-white">
                       {review.name}
                     </p>
-                    <p className="ml-[2.35rem] mt-3 border-t border-white/18 pt-4 text-sm font-semibold uppercase tracking-[0.08em] text-white/62">
+                    <p className="type-small ml-[2.35rem] mt-3 border-t border-white/18 pt-4 uppercase tracking-[0.08em] text-white">
                       {review.service} | {review.city}
                     </p>
                   </article>
@@ -191,7 +191,7 @@ export function ReviewSlider() {
         </div>
       </div>
 
-      <div className="review-slider-controls mt-12 flex items-center justify-end gap-6">
+      <div className="review-slider-controls mt-6 flex items-center justify-end gap-6">
         <div className="flex items-center gap-3" aria-label="Review slides">
           {Array.from({ length: slideCount }).map((_, index) => (
             <button

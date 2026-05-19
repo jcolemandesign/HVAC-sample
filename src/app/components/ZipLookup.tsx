@@ -34,12 +34,12 @@ export function ZipLookup() {
 
       {hasSubmitted ? (
         <div className="mt-8 rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)]">
-          <p className="section-subheader text-[#273c5b]">You&apos;re in our service area</p>
-          <p className="mt-4 text-lg font-light leading-8 text-[#273c5b]">
+          <p className="type-large-text text-[#273c5b]">You&apos;re in our service area</p>
+          <p className="type-regular mt-4 text-[#273c5b]">
             Schedule your service today!
           </p>
           <Link
-            className="service-view-link font-semiexpanded mt-7 inline-flex w-fit items-center pb-[1.1rem] text-[clamp(1.05rem,1vw,1.3rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b]"
+            className="service-view-link type-text-link mt-7 inline-flex w-fit items-center pb-[1.1rem] uppercase text-[#152435] transition hover:text-[#273c5b]"
             href="/contact"
           >
             REQUEST SERVICE

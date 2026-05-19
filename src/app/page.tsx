@@ -102,13 +102,13 @@ const processSteps = [
   },
   {
     number: "2",
-    title: "We follow up",
+    title: "We Follow Up",
     description:
       "Our team confirms the details and schedules the next available appointment.",
   },
   {
     number: "3",
-    title: "Get comfortable again",
+    title: "Get Comfortable Again",
     description:
       "A technician diagnoses the issue and walks you through your options.",
   },
@@ -258,13 +258,13 @@ export default function Home() {
 
         <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col md:w-[min(calc(100dvw-2rem),111rem)] md:py-16 lg:min-h-[51rem] lg:items-start lg:justify-center">
           <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:max-w-[50vw] md:px-9 md:py-10 lg:px-12 lg:py-12">
-            <p className="max-w-full text-[clamp(0.76rem,0.78vw,0.9rem)] font-normal uppercase leading-6 tracking-[0.2em] text-white">
+            <p className="type-eyebrow max-w-full uppercase text-white">
               Local HVAC Service in Huntersville, NC
             </p>
-            <h1 className="hero-heading display-heading mt-4 max-w-full text-white md:mt-5">
+            <h1 className="type-main-header mt-4 max-w-full text-white md:mt-5">
               Keep your home running at peak efficiency, season after season.
             </h1>
-            <p className="mt-5 max-w-full text-base font-normal leading-7 text-white md:mt-6 md:max-w-[44rem] md:text-lg md:leading-8">
+            <p className="type-regular mt-5 max-w-full text-white md:mt-6 md:max-w-[44rem]">
               Schedule AC repair, heating service, tune-ups, or system replacement
               with local technicians who explain the issue clearly and give you
               options before the work starts.
@@ -302,7 +302,7 @@ export default function Home() {
             {[...trustItems, ...trustItems].map((item, index) => (
               <div
                 key={`${item.text}-${index}`}
-                className="font-semiexpanded flex min-w-max items-center px-8 text-sm font-semibold uppercase tracking-[0.025em]"
+                className="type-banner flex min-w-max items-center px-8 uppercase tracking-[0.025em]"
                 aria-hidden={index >= trustItems.length ? "true" : undefined}
               >
                 {item.star ? (
@@ -344,21 +344,21 @@ export default function Home() {
         <AnimatedSunburst />
         <div className="relative z-10 mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div data-services-intro className="grid gap-5 xl:grid-cols-3 xl:items-center">
-            <h2 className="display-heading max-w-[58rem] text-[#273c5b] xl:col-span-2">
+            <h2 className="type-regular-header max-w-[58rem] text-[#273c5b] xl:col-span-2">
               Repairs, tune-ups, and installs with fast, relaible service.
             </h2>
             <Link
-              className="service-view-link font-semiexpanded inline-flex w-fit items-center justify-self-start gap-3 pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b] xl:justify-self-center"
+              className="service-view-link type-text-link inline-flex w-fit items-center justify-self-start gap-3 pb-[1.45rem] uppercase text-[#152435] transition hover:text-[#273c5b] xl:justify-self-center"
               href="/services"
             >
               VIEW OUR SERVICES
             </Link>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-12 grid items-start gap-5 md:mt-[3.45rem] md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
             <article
               key={service.title}
-              className="service-card group relative flex min-h-[18.5rem] cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)]"
+              className="service-card group relative flex min-h-[18.5rem] cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)] md:p-[3.1rem]"
             >
               <svg
                 className="service-card-arrow"
@@ -374,14 +374,14 @@ export default function Home() {
                   d="M1 32.349L30.545 2.804"
                 />
               </svg>
-              <h3 className="pr-14 text-2xl font-light text-[#273c5b]">
+              <h3 className="type-card-header pr-14 text-[#273c5b]">
                 {service.title}
               </h3>
-              <p className="mt-5 max-w-[31rem] text-lg font-light leading-8 text-[#273c5b]">
+              <p className="type-regular mt-5 max-w-[31rem] text-[#273c5b] md:mt-14">
                 {service.description}
               </p>
               <Link
-                className="mt-auto inline-flex w-fit pt-8 text-sm font-extrabold uppercase tracking-[0.08em] text-[#152435] transition hover:text-[#273c5b]"
+                className="service-card-learn-more mt-6 inline-flex w-fit text-[#152435] transition hover:text-[#273c5b] md:mt-16"
                 href="/services"
               >
                 Learn More
@@ -395,17 +395,18 @@ export default function Home() {
       <section id="service-request" className="grid min-h-[43rem] bg-[#273c5b] lg:grid-cols-2">
         <div className="flex items-center bg-[#273c5b] px-8 py-20 text-white sm:px-12 lg:py-24 lg:pl-[max(3rem,calc((100vw-111rem)/2+3rem))] lg:pr-16 xl:pr-20">
           <div className="w-full">
-            <h2 className="display-heading text-white">
+            <h2 className="type-regular-header text-white">
               How can we help?
             </h2>
-            <p className="mt-8 text-lg font-light leading-8 text-white">
+            <p className="type-large-text mt-8 text-white">
               AC not keeping up? Heat not turning on? Weird noise from the unit?
-              <br />
+            </p>
+            <p className="type-regular mt-2 max-w-[42rem] text-white">
               Tell us what’s going on and we’ll help you figure out the next step.
             </p>
             <ul className="mt-10 grid max-w-[42rem] gap-x-8 gap-y-5 sm:grid-cols-[max-content_max-content]">
               {requestItems.map((item) => (
-                <li key={item} className="flex items-center gap-4 text-lg font-bold text-white">
+                <li key={item} className="type-checklist flex items-center gap-4 text-white">
                   <span className="icon-mask icon-checkbox text-[#169bd5]" aria-hidden="true" />
                   {item}
                 </li>
@@ -434,12 +435,12 @@ export default function Home() {
       <section id="why-choose-us" className="bg-[#eef6fc] pb-[4.3rem] pt-[6rem] text-[#273c5b] lg:pb-[5.2rem] lg:pt-[7.2rem]">
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div className="mx-auto flex max-w-[60rem] flex-col items-center text-center">
-            <h2 className="display-heading text-[#273c5b]">Why Choose Us</h2>
-            <p className="mt-6 text-lg font-light leading-8 text-[#273c5b]">
+            <h2 className="type-regular-header text-[#273c5b]">Why Choose Us</h2>
+            <p className="type-subheader mt-6 text-[#273c5b]">
               Straightforward HVAC service without the runaround.
             </p>
             <Link
-              className="service-view-link font-semiexpanded mt-9 inline-flex w-fit items-center pb-[1.45rem] text-[clamp(1.25rem,1.15vw,1.5625rem)] font-medium uppercase leading-none tracking-[0.02em] text-[#152435] transition hover:text-[#273c5b]"
+              className="service-view-link type-text-link mt-9 inline-flex w-fit items-center pb-[1.45rem] uppercase text-[#152435] transition hover:text-[#273c5b]"
               href="/about"
             >
               ABOUT NORTH STAR
@@ -453,8 +454,8 @@ export default function Home() {
       <section id="how-it-works" className="overflow-hidden bg-[#eef6fc] pb-[6rem] pt-[4.3rem] text-[#273c5b] lg:pb-[7.2rem] lg:pt-[5.2rem]">
         <div className="mx-auto grid w-[min(calc(100dvw-2rem),111rem)] gap-14 px-6 lg:grid-cols-2 lg:items-center lg:px-12">
           <div className="min-w-0">
-            <h2 className="display-heading text-[#273c5b]">How it works</h2>
-            <p className="mt-6 text-lg font-light leading-8 text-[#273c5b]">
+            <h2 className="type-regular-header text-[#273c5b]">How it Works</h2>
+            <p className="type-subheader mt-6 text-[#273c5b]">
               Getting help is simple
             </p>
             <Link
@@ -473,10 +474,10 @@ export default function Home() {
                   {step.number}
                 </div>
                 <div>
-                  <h3 className="font-semiexpanded text-[clamp(1.65rem,1.75vw,2.4rem)] font-normal leading-[1.08] text-[#273c5b]">
+                  <h3 className="type-subheader-emphasized text-[#273c5b]">
                     {step.title}
                   </h3>
-                  <p className="mt-4 max-w-[43rem] text-lg font-light leading-8 text-[#273c5b]">
+                  <p className="type-regular mt-4 max-w-[43rem] text-[#273c5b]">
                     {step.description}
                   </p>
                 </div>
@@ -492,12 +493,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="reviews" className="bg-[#273c5b] py-[5.7rem] text-white lg:py-[6.8rem]">
+      <section id="reviews" className="bg-[#273c5b] pb-[4.2rem] pt-[5.7rem] text-white lg:pb-[4.9rem] lg:pt-[6.8rem]">
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
           <div className="mx-auto flex max-w-[62rem] flex-col items-center text-center">
             <span className="icon-mask icon-review-stars mb-4 text-[#cc0d0d]" aria-hidden="true" />
-            <h2 className="display-heading text-white">Trusted locally</h2>
-            <p className="mt-6 text-lg font-light leading-8 text-white">
+            <h2 className="type-regular-header text-white">Trusted Locally</h2>
+            <p className="type-subheader mt-6 text-white">
               Clear communication from the first call to the final test.
             </p>
           </div>
@@ -518,7 +519,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
-          <h2 className="display-heading mx-auto max-w-[74rem] text-center text-[#273c5b]">
+          <h2 className="type-regular-header mx-auto max-w-[74rem] text-center text-[#273c5b]">
             Serving Huntersville and nearby North Charlotte Communities
           </h2>
         </div>
@@ -528,7 +529,7 @@ export default function Home() {
             <div className="w-full">
               <div className="grid max-w-[42rem] gap-x-10 gap-y-4 sm:grid-cols-2">
                 {serviceAreaColumns.map((column, columnIndex) => (
-                  <ul key={columnIndex} className="section-subheader grid self-start gap-4 text-[#273c5b]">
+                  <ul key={columnIndex} className="type-subheader grid self-start gap-4 text-[#273c5b]">
                     {column.map((area) => (
                       <li key={area}>{area}</li>
                     ))}
@@ -536,7 +537,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <p className="tiny-subhead mt-10 text-[#273c5b]/78">
+              <p className="type-regular mt-10 text-[#273c5b] md:mt-[3.75rem]">
                 Not sure if we service your area?
               </p>
 
@@ -568,11 +569,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#152435]/20" aria-hidden="true" />
         <div className="relative z-20 mx-auto flex min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] items-center px-6 py-20 lg:px-12 lg:py-24">
           <div className="flex max-w-[45rem] flex-col justify-center rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,rgba(252,253,252,0.96)_0%,rgba(233,240,246,0.92)_100%)] p-7 shadow-[0_28px_70px_rgba(21,36,53,0.28)] backdrop-blur-[2px] sm:p-10 lg:p-12">
-            <h2 className="display-heading text-[#273c5b]">Spring AC Tune-Up Special</h2>
-            <p className="mt-6 text-lg font-light leading-8 text-[#273c5b]">
+            <h2 className="type-regular-header text-[#273c5b]">Spring AC Tune-Up Special</h2>
+            <p className="type-large-text mt-6 text-[#273c5b]">
               Get your cooling system checked before the first heat wave hits.
             </p>
-            <p className="mt-6 max-w-[38rem] text-lg font-light leading-8 text-[#273c5b]">
+            <p className="type-regular mt-6 max-w-[38rem] text-[#273c5b]">
               Includes airflow check, thermostat review, filter check, and system inspection.
             </p>
             <Link
@@ -587,18 +588,18 @@ export default function Home() {
 
       <section id="faq" className="bg-[#eef6fc] py-[6.5rem] text-[#273c5b] lg:py-[7.8rem]">
         <div className="mx-auto w-[min(calc(100dvw-2rem),111rem)] px-6 lg:px-12">
-          <h2 className="display-heading text-center text-[#273c5b]">Frequently Asked</h2>
+          <h2 className="type-regular-header text-center text-[#273c5b]">Frequently Asked</h2>
 
           <FaqAccordion faqs={faqs} />
         </div>
       </section>
 
-      <section className="bg-[#273c5b] px-6 pt-[6.5rem] text-white lg:px-12 lg:pt-[7.8rem]">
+      <section className="bg-[#273c5b] px-6 py-[7.8rem] text-white lg:px-12 lg:py-[9.36rem]">
         <div className="mx-auto flex w-[min(100%,74rem)] flex-col items-center text-center">
-          <h2 className="display-heading max-w-[70rem] text-white">
+          <h2 className="type-headline-emphasized max-w-[70rem] text-white">
             Need HVAC Help Today?
           </h2>
-          <p className="mt-6 max-w-[54rem] text-lg font-light leading-8 text-white">
+          <p className="type-subheader mt-6 max-w-[54rem] text-white">
             Tell us what&apos;s going on and we&apos;ll get back to you as soon as possible.
           </p>
           <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
@@ -621,21 +622,21 @@ export default function Home() {
         <div className="mx-auto mt-20 h-px w-[min(100%,111rem)] bg-[#eef6fc]" />
       </section>
 
-      <footer className="bg-[#273c5b] px-6 pb-16 pt-20 text-white lg:px-12 lg:pb-20 lg:pt-20">
+      <footer className="bg-[#273c5b] px-6 pb-16 pt-0 text-white lg:px-12 lg:pb-20 lg:pt-0">
         <div className="mx-auto w-[min(100%,111rem)]">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(20rem,0.75fr)]">
             <div>
               <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
                 <Image src={logo} alt="North Star HVAC" className="h-auto w-72" />
               </Link>
-              <p className="mt-9 max-w-[36rem] text-lg font-light leading-8 text-white">
+              <p className="type-regular mt-9 max-w-[36rem] text-white">
                 North Star HVAC provides reliable heating, cooling, and indoor comfort service for homeowners in Huntersville, Lake Norman, and North Charlotte.
               </p>
 
               <div className="mt-12 grid max-w-[45rem] gap-6 sm:grid-cols-3">
                 {footerLinkColumns.map((column) => (
                   <div key={column.title}>
-                    <h3 className="section-subheader text-white">{column.title}</h3>
+                    <h3 className="type-large-text text-white">{column.title}</h3>
                     <ul className="mt-5 grid gap-3 text-base font-medium text-white/74">
                       {column.links.map((link) => (
                         <li key={link.label}>
@@ -651,14 +652,14 @@ export default function Home() {
             </div>
 
             <div className="lg:justify-self-end">
-              <a className="section-subheader block text-white" href="tel:+13365552121">
+              <a className="type-large-text block text-white" href="tel:+13365552121">
                 336-555-2121
               </a>
-              <a className="section-subheader mt-3 block text-white" href="mailto:Support@northstarhvac.com">
+              <a className="type-large-text mt-3 block text-white" href="mailto:Support@northstarhvac.com">
                 Support@northstarhvac.com
               </a>
 
-              <div className="mt-9 text-lg font-light leading-8 text-white">
+              <div className="type-large-text mt-9 text-white">
                 <p>Monday-Friday: 8:00 AM-6:00 PM</p>
                 <p>Saturday: 9:00 AM-2:00 PM</p>
                 <p>Sunday: Closed</p>
@@ -677,7 +678,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <address className="mt-9 text-lg not-italic font-light leading-8 text-white">
+              <address className="type-large-text mt-9 not-italic text-white">
                 North Star HVAC
                 <br />
                 12814 Statesville Road, Suite 204

@@ -10,6 +10,69 @@
   --primary-blue: #273c5b;
   --bright-blue: #169bd5;
   --dark-blue: #152435;
+  --type-headline-emphasized-size: 5.175rem;
+  --type-headline-emphasized-line: 0.98;
+  --type-main-header-size: 4.25rem;
+  --type-main-header-line: 1.04;
+  --type-regular-header-size: 3.875rem;
+  --type-regular-header-line: 1.04;
+  --type-subheader-size: 1.9125rem;
+  --type-subheader-line: 1.2;
+  --type-subheader-emphasized-size: 2.205rem;
+  --type-subheader-emphasized-line: 1.12;
+  --type-card-header-size: 1.63125rem;
+  --type-card-header-line: 1.14;
+  --type-large-size: 1.40625rem;
+  --type-large-line: 1.24;
+  --type-regular-size: 1.2375rem;
+  --type-regular-line: 1.575rem;
+  --type-small-size: 0.9rem;
+  --type-small-line: 1.29375rem;
+  --type-banner-size: 1rem;
+  --type-banner-line: 1;
+  --type-eyebrow-size: 0.9rem;
+  --type-eyebrow-line: 1.35;
+  --type-text-link-size: calc(var(--type-card-header-size) * 0.78);
+  --type-cta-size: 1rem;
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --type-headline-emphasized-size: 4.5rem;
+    --type-main-header-size: 3.75rem;
+    --type-regular-header-size: 3.375rem;
+    --type-subheader-size: 1.71rem;
+    --type-subheader-emphasized-size: 1.98rem;
+    --type-card-header-size: 1.4625rem;
+    --type-large-size: 1.2375rem;
+    --type-regular-size: 1.08rem;
+    --type-regular-line: 1.4625rem;
+    --type-small-size: 0.855rem;
+    --type-small-line: 1.215rem;
+    --type-banner-size: 0.9rem;
+    --type-eyebrow-size: 0.855rem;
+    --type-cta-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --type-headline-emphasized-size: 2.7rem;
+    --type-headline-emphasized-line: 1.02;
+    --type-main-header-size: 2.35rem;
+    --type-regular-header-size: 2.1rem;
+    --type-subheader-size: 1.08rem;
+    --type-subheader-emphasized-size: 1.26rem;
+    --type-card-header-size: 0.945rem;
+    --type-large-size: 0.945rem;
+    --type-regular-size: 0.9rem;
+    --type-regular-line: 1.35rem;
+    --type-small-size: 0.7875rem;
+    --type-small-line: 1.125rem;
+    --type-banner-size: 0.72rem;
+    --type-eyebrow-size: 0.7875rem;
+    --type-cta-size: 0.78rem;
+  }
 }
 
 @theme inline {
@@ -32,28 +95,6 @@ body {
   font-optical-sizing: auto;
 }
 
-.display-heading {
-  font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-size: clamp(2.75rem, 3.05vw, 4.2rem);
-  font-weight: 200;
-  line-height: 1.04;
-}
-
-.section-subheader {
-  font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-size: clamp(1.35rem, 1.12vw, 1.6rem);
-  font-weight: 400;
-  line-height: 1.45;
-}
-
-.tiny-subhead {
-  font-size: clamp(1.05rem, 0.9vw, 1.18rem);
-  font-weight: 500;
-  line-height: 1.42;
-}
-
 .leading-7 {
   line-height: 1.52;
 }
@@ -64,6 +105,112 @@ body {
 
 .leading-9 {
   line-height: 1.58;
+}
+
+.type-headline-emphasized,
+.type-main-header,
+.type-regular-header,
+.display-heading,
+.type-subheader,
+.section-subheader,
+.type-subheader-emphasized,
+.type-card-header,
+.type-large-text,
+.type-banner {
+  font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: 0;
+}
+
+.type-headline-emphasized {
+  font-size: var(--type-headline-emphasized-size);
+  font-weight: 200;
+  line-height: var(--type-headline-emphasized-line);
+}
+
+.type-main-header {
+  font-size: var(--type-main-header-size);
+  font-weight: 200;
+  line-height: var(--type-main-header-line);
+}
+
+.type-regular-header,
+.display-heading {
+  font-size: var(--type-regular-header-size);
+  font-weight: 200;
+  line-height: var(--type-regular-header-line);
+}
+
+.type-subheader,
+.section-subheader {
+  font-size: var(--type-subheader-size);
+  font-weight: 300;
+  line-height: var(--type-subheader-line);
+}
+
+.type-subheader-emphasized {
+  font-size: var(--type-subheader-emphasized-size);
+  font-weight: 300;
+  line-height: var(--type-subheader-emphasized-line);
+}
+
+.type-card-header {
+  font-size: var(--type-card-header-size);
+  font-weight: 500;
+  line-height: var(--type-card-header-line);
+}
+
+.type-large-text {
+  font-size: var(--type-large-size);
+  font-weight: 300;
+  line-height: var(--type-large-line);
+}
+
+.type-regular {
+  font-family: "Zalando Sans", Arial, Helvetica, sans-serif;
+  font-size: var(--type-regular-size);
+  font-weight: 300;
+  line-height: var(--type-regular-line);
+  letter-spacing: 0;
+}
+
+.type-small {
+  font-family: "Zalando Sans", Arial, Helvetica, sans-serif;
+  font-size: var(--type-small-size);
+  font-weight: 300;
+  line-height: var(--type-small-line);
+  letter-spacing: 0;
+}
+
+.type-banner {
+  font-size: var(--type-banner-size);
+  font-weight: 600;
+  line-height: var(--type-banner-line);
+}
+
+.type-eyebrow {
+  font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
+  font-size: var(--type-eyebrow-size);
+  font-weight: 300;
+  line-height: var(--type-eyebrow-line);
+  letter-spacing: 0.1em;
+}
+
+.type-text-link {
+  font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
+  font-size: var(--type-text-link-size);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.type-checklist {
+  font-family: "Zalando Sans", Arial, Helvetica, sans-serif;
+  font-size: var(--type-regular-size);
+  font-style: italic;
+  font-weight: 300;
+  line-height: var(--type-regular-line);
+  letter-spacing: 0;
 }
 
 .icon-mask {
@@ -123,8 +270,8 @@ body {
 }
 
 .icon-review-stars {
-  width: 8.75rem;
-  height: 1.12rem;
+  width: 10.0625rem;
+  height: 1.288rem;
   mask-image: url("/icons-review-stars.svg");
   -webkit-mask-image: url("/icons-review-stars.svg");
 }
@@ -177,7 +324,7 @@ body {
   max-width: 100%;
   white-space: nowrap;
   text-wrap: nowrap;
-  font-size: clamp(0.72rem, 2.8vw, 1rem) !important;
+  font-size: var(--type-cta-size) !important;
   box-shadow:
     0.28rem 0.42rem 0.85rem rgba(21, 36, 53, 0.18),
     0.6rem 1rem 2rem rgba(21, 36, 53, 0.16);
@@ -187,7 +334,7 @@ body {
   max-width: 100%;
   white-space: nowrap;
   text-wrap: nowrap;
-  font-size: clamp(0.72rem, 2.8vw, 1rem) !important;
+  font-size: var(--type-cta-size) !important;
 }
 
 .phone-cta .icon-phone {
@@ -251,8 +398,8 @@ body {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  width: 1.872rem;
-  height: 1.872rem;
+  width: 1.778rem;
+  height: 1.778rem;
   color: var(--primary-blue);
   opacity: 0.5;
   overflow: visible;
@@ -275,6 +422,15 @@ body {
 
 .service-card:hover .service-card-arrow {
   opacity: 1;
+}
+
+.service-card-learn-more {
+  font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
+  font-size: calc(var(--type-text-link-size) * 1.08);
+  font-weight: 300;
+  font-variation-settings: "wdth" 125;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .faq-item {
@@ -308,11 +464,7 @@ body {
 }
 
 .faq-question {
-  font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-size: clamp(1.22rem, 1.52vw, 2rem);
-  font-weight: 400;
-  line-height: 1.18;
+  display: block;
 }
 
 .faq-summary .icon-down-arrow {
@@ -339,7 +491,7 @@ body {
   max-width: 72rem;
   min-height: 0;
   padding: 0 6.5rem 0 2rem;
-  color: rgba(39, 60, 91, 0.78);
+  color: var(--primary-blue);
   overflow: hidden;
   opacity: 0;
   transition:
@@ -420,7 +572,7 @@ body {
 }
 
 .review-slide-item {
-  min-height: 21rem;
+  min-height: 0;
 }
 
 .review-slider-viewport {
@@ -434,8 +586,8 @@ body {
 
 .review-slider-button {
   display: inline-flex;
-  width: 3.2rem;
-  height: 4.25rem;
+  width: 3.84rem;
+  height: 5.1rem;
   align-items: center;
   justify-content: center;
   color: var(--bright-blue);
@@ -454,7 +606,7 @@ body {
 
 .review-slider-button .icon-next-arrow {
   width: 100%;
-  height: 2.58rem;
+  height: 3.096rem;
 }
 
 .review-slider-dot {
@@ -480,26 +632,6 @@ body {
 }
 
 @media (max-width: 767px) {
-  .display-heading:not(.hero-heading) {
-    font-size: clamp(1.38rem, 7vw, 2.35rem);
-    line-height: 1.04;
-  }
-
-  .section-subheader {
-    font-size: clamp(0.95rem, 4.25vw, 1.08rem);
-    line-height: 1.28;
-  }
-
-  .tiny-subhead {
-    font-size: clamp(0.88rem, 3.8vw, 0.98rem);
-    line-height: 1.35;
-  }
-
-  .service-view-link {
-    font-size: clamp(0.9rem, 3.85vw, 1.04rem);
-    line-height: 1;
-  }
-
   [data-services-intro] .service-view-link {
     margin-top: 0.75rem;
   }
@@ -512,8 +644,8 @@ body {
   .service-card-arrow {
     top: 1rem;
     right: 1rem;
-    width: 1rem;
-    height: 1rem;
+    width: 0.95rem;
+    height: 0.95rem;
   }
 
   .service-card a {
@@ -530,28 +662,6 @@ body {
   .how-van {
     margin-top: 2rem;
     max-width: 100%;
-  }
-
-  .text-lg {
-    font-size: 1rem;
-  }
-
-  .text-xl {
-    font-size: 1.08rem;
-  }
-
-  .service-card h3,
-  .why-card h3 {
-    font-size: clamp(1.15rem, 5vw, 1.42rem);
-    line-height: 1.08;
-  }
-
-  .service-card p,
-  .why-card p,
-  .review-quote,
-  .faq-answer p {
-    font-size: clamp(0.94rem, 4vw, 1.02rem);
-    line-height: 1.45;
   }
 
   .review-slider-controls {
@@ -577,11 +687,6 @@ body {
     min-height: 0;
     gap: 1rem;
     padding: 1.25rem 1.2rem;
-  }
-
-  .faq-question {
-    font-size: clamp(0.98rem, 4.6vw, 1.18rem);
-    line-height: 1.18;
   }
 
   .faq-summary .icon-down-arrow {
@@ -650,19 +755,13 @@ body {
     min-height: 14rem;
   }
 
-  .hero-heading {
-    font-size: clamp(1.38rem, 7vw, 2.35rem);
-    line-height: 1.04;
-  }
-
   .hero-trust-marquee {
     margin-bottom: 0;
     padding-block: 0.9rem;
   }
 
-  .hero-trust-marquee .font-semiexpanded {
+  .hero-trust-marquee .type-banner {
     padding-inline: 1.35rem;
-    font-size: 0.68rem;
     letter-spacing: 0.02em;
   }
 
