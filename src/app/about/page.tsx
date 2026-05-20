@@ -43,7 +43,7 @@ export default function AboutPage() {
               arrives.
             </p>
           </div>
-          <div className="rounded-lg bg-slate-950 p-6 text-white shadow-xl sm:p-8">
+          <div className="rounded-[5px] bg-slate-950 p-6 text-white shadow-xl sm:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
               Coming soon
             </p>
@@ -56,7 +56,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto w-[min(calc(100dvw-2.5rem),72rem)] py-14">
-        <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <div className="rounded-[5px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <h2 className="text-2xl font-bold">Placeholder content</h2>
           <p className="mt-4 max-w-3xl leading-7 text-slate-600">
             Add team values, neighborhood coverage, license details, and review

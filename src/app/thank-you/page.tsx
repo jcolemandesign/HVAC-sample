@@ -44,13 +44,13 @@ export default function ThankYouPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                className="inline-flex h-12 w-full items-center justify-center rounded-md bg-teal-700 px-6 text-base font-bold text-white shadow-sm transition hover:bg-teal-800 sm:w-auto"
+                className="inline-flex h-12 w-full items-center justify-center rounded-[5px] bg-teal-700 px-6 text-base font-bold text-white shadow-sm transition hover:bg-teal-800 sm:w-auto"
                 href="/"
               >
                 Back to home
               </Link>
               <Link
-                className="inline-flex h-12 w-full items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-base font-bold text-slate-900 transition hover:border-teal-700 hover:text-teal-800 sm:w-auto"
+                className="inline-flex h-12 w-full items-center justify-center rounded-[5px] border border-slate-300 bg-white px-6 text-base font-bold text-slate-900 transition hover:border-teal-700 hover:text-teal-800 sm:w-auto"
                 href="/services"
               >
                 View services
@@ -58,7 +58,7 @@ export default function ThankYouPage() {
             </div>
           </div>
 
-          <aside className="rounded-lg bg-slate-950 p-6 text-white shadow-xl sm:p-8">
+          <aside className="rounded-[5px] bg-slate-950 p-6 text-white shadow-xl sm:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
               Need help now?
             </p>
@@ -80,7 +80,7 @@ export default function ThankYouPage() {
             "We confirm the best appointment window",
             "We send the right technician prepared",
           ].map((step) => (
-            <article key={step} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <article key={step} className="rounded-[5px] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="text-xl font-bold">{step}</h2>
               <p className="mt-3 leading-7 text-slate-600">
                 Your request is queued for follow-up before any future CRM or

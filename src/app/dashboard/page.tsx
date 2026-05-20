@@ -139,7 +139,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
           </Link>
           <form action={logout}>
             <button
-              className="type-small inline-flex h-10 max-w-48 items-center justify-center whitespace-nowrap rounded-[6px] border border-white/55 bg-transparent px-5 font-light uppercase tracking-[0.08em] text-white transition hover:border-white hover:bg-transparent"
+              className="type-small inline-flex h-10 max-w-48 items-center justify-center whitespace-nowrap rounded-[5px] border border-white/55 bg-transparent px-5 font-light uppercase tracking-[0.08em] text-white transition hover:border-white hover:bg-transparent"
               type="submit"
             >
               Log Out
@@ -165,7 +165,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
               </p>
             </div>
             <Link
-              className="type-small inline-flex h-12 max-w-72 items-center justify-center whitespace-nowrap rounded-[6px] border border-[#273c5b]/55 bg-transparent px-6 font-light uppercase tracking-[0.08em] text-[#273c5b] transition hover:border-[#273c5b] hover:bg-transparent sm:w-auto"
+              className="type-small inline-flex h-12 max-w-72 items-center justify-center whitespace-nowrap rounded-[5px] border border-[#273c5b]/55 bg-transparent px-6 font-light uppercase tracking-[0.08em] text-[#273c5b] transition hover:border-[#273c5b] hover:bg-transparent sm:w-auto"
               href="/contact"
             >
               View Contact Form
@@ -173,7 +173,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-3">
-            <article className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
+            <article className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
               <p className="type-eyebrow uppercase text-[#273c5b]">
                 Total leads
               </p>
@@ -181,7 +181,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
                 {totalLeads}
               </p>
             </article>
-            <article className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
+            <article className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
               <p className="type-eyebrow uppercase text-[#273c5b]">
                 New leads
               </p>
@@ -189,7 +189,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
                 {newLeads}
               </p>
             </article>
-            <article className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
+            <article className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
               <p className="type-eyebrow uppercase text-[#273c5b]">
                 Latest lead date
               </p>
@@ -203,7 +203,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
 
       <section className="mx-auto w-[min(calc(100dvw-2rem),86rem)] px-4 pb-16 min-[1120px]:px-1 lg:pb-20">
         {error ? (
-          <div className="rounded-[8px] border border-[#cc0d0d]/25 bg-[#cc0d0d]/10 p-6 text-[#cc0d0d]">
+          <div className="rounded-[5px] border border-[#cc0d0d]/25 bg-[#cc0d0d]/10 p-6 text-[#cc0d0d]">
             <p className="type-card-header">Could not load leads.</p>
             <p className="type-small mt-2">{error.message}</p>
           </div>

@@ -73,6 +73,11 @@ const requestItems = [
   "System won’t turn on",
 ];
 
+const requestItemColumns = [
+  requestItems.slice(0, 3),
+  requestItems.slice(3),
+];
+
 const reasons = [
   {
     title: "Clear Recommendations",
@@ -194,16 +199,13 @@ const socialLinks = [
 export default function Home() {
   return (
     <>
-      <div className="fixed left-3 top-3 z-[9999] rounded-[4px] bg-[#dc2626] px-3 py-2 text-sm font-bold text-white shadow-lg">
-        BUILD CHECK 123
-      </div>
       <header className="site-header z-50 bg-[var(--primary-blue)] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
-        <div className="site-header-inner mx-auto flex w-full items-center justify-between gap-5 px-4 min-[1120px]:w-[min(calc(100dvw-2rem),111rem)] min-[1120px]:px-1 min-[1120px]:py-3">
+        <div className="site-header-inner flex w-full items-center justify-between gap-5 px-4 min-[1120px]:px-6 min-[1120px]:py-3">
           <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
             <Image src={logo} alt="North Star HVAC" className="h-auto w-44" priority />
           </Link>
           <button
-            className="inline-flex h-11 items-center gap-2 rounded-[6px] px-2 text-[0.95rem] font-bold text-white min-[1120px]:hidden"
+            className="inline-flex h-11 items-center gap-2 rounded-[5px] px-2 text-[0.95rem] font-bold text-white min-[1120px]:hidden"
             type="button"
             aria-label="Open main menu"
           >
@@ -233,14 +235,14 @@ export default function Home() {
           </nav>
           <div className="hidden flex-col gap-[0.8rem] sm:flex-row min-[1120px]:ml-auto min-[1120px]:flex">
             <a
-              className="phone-cta inline-flex h-10 w-full items-center justify-center gap-2 rounded-[6px] border-[1pt] border-white/70 bg-transparent px-4 text-sm text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
+              className="phone-cta inline-flex h-10 w-full items-center justify-center gap-2 rounded-[5px] border-[1pt] border-white/70 bg-transparent px-4 text-sm text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
               href="tel:+13365552121"
             >
               <span className="icon-mask icon-phone" aria-hidden="true" />
               336-555-2121
             </a>
             <Link
-              className="hero-primary-cta inline-flex h-10 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-4 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-fit"
+              className="hero-primary-cta inline-flex h-10 w-full items-center justify-center rounded-[5px] bg-[#cc0d0d] px-4 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-fit"
               href="/contact"
             >
               Schedule Now
@@ -250,31 +252,33 @@ export default function Home() {
       </header>
 
       <main className="min-h-screen overflow-x-clip bg-[#eef6fc] pb-[calc(4.75rem+env(safe-area-inset-bottom))] pt-[calc(4rem+env(safe-area-inset-top))] text-[#273c5b] min-[1120px]:pb-0 min-[1120px]:pt-0">
-      <section className="mobile-hero-section relative overflow-hidden bg-[#152435] min-[1120px]:bg-[var(--primary-blue)]">
-        <div className="absolute right-0 top-0 hidden h-[51rem] w-[85.333rem] max-w-none min-[1120px]:block">
+      <section className="mobile-hero-section relative flex h-[calc(100svh-4rem-env(safe-area-inset-top))] min-h-0 flex-col overflow-hidden bg-[#152435] min-[1120px]:h-[calc(100svh-4rem)] min-[1120px]:bg-[var(--primary-blue)]">
+        <div className="absolute inset-0 hidden h-full w-full max-w-none min-[1120px]:block">
           <Image
             src={heroImage}
             alt="North Star HVAC technician greeting a homeowner"
             fill
-            className="object-cover object-right"
-            sizes="1366px"
+            className="object-cover object-center"
+            sizes="100vw"
           />
         </div>
 
-        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col min-[1120px]:min-h-[51rem] min-[1120px]:w-[min(calc(100dvw-2rem),111rem)]">
-          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:px-9 md:py-10 min-[1120px]:flex min-[1120px]:max-w-[50vw] min-[1120px]:flex-1 min-[1120px]:flex-col min-[1120px]:justify-center min-[1120px]:px-12 min-[1120px]:py-12">
+        <div className="mobile-hero-main relative z-10 flex min-h-0 w-full flex-1 flex-col">
+          <div className="min-w-0 px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:px-9 md:py-10 min-[1120px]:flex min-[1120px]:max-w-[58vw] min-[1120px]:flex-1 min-[1120px]:flex-col min-[1120px]:justify-center min-[1120px]:px-12 min-[1120px]:py-12">
             <h1 className="type-main-header max-w-full text-white">
-              Keep your home running at peak efficiency, season after season.
+              <span className="block whitespace-nowrap">Keep your home running</span>
+              <span className="block whitespace-nowrap">at peak efficiency,</span>
+              <span className="block whitespace-nowrap">season after season.</span>
             </h1>
             <div className="mt-8 hidden flex-col gap-3 sm:flex-row sm:items-center min-[1120px]:flex">
               <Link
-                className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
+                className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[5px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
                 href="/contact"
               >
                 SCHEDULE NOW
               </Link>
               <a
-                className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[1pt] border-white/80 bg-transparent px-7 text-base uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+                className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[5px] border-[1pt] border-white/80 bg-transparent px-7 text-base uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
                 href="tel:+13365552121"
               >
                 <span className="icon-mask icon-phone" aria-hidden="true" />
@@ -292,7 +296,7 @@ export default function Home() {
               sizes="100vw"
             />
           </div>
-          <div className="hero-info-panel px-4 py-7 md:px-9 md:py-8">
+          <div className="hero-info-panel rounded-tr-[5px] px-4 py-7 md:px-9 md:py-8">
             <p className="type-eyebrow max-w-full uppercase text-white">
               Local HVAC Service in Huntersville, NC
             </p>
@@ -310,7 +314,7 @@ export default function Home() {
       <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] min-[1120px]:hidden">
         <div className="mx-auto grid w-full max-w-[34rem] grid-cols-2 gap-3">
         <a
-          className="phone-cta relative inline-flex h-12 items-center justify-center rounded-[6px] border-[1pt] border-white/70 px-9 text-sm text-white transition hover:border-white hover:bg-white/10"
+          className="phone-cta relative inline-flex h-12 items-center justify-center rounded-[5px] border-[1pt] border-white/70 px-9 text-sm text-white transition hover:border-white hover:bg-white/10"
           href="tel:+13365552121"
           aria-label="Call North Star HVAC"
         >
@@ -318,7 +322,7 @@ export default function Home() {
           336-555-2121
         </a>
         <Link
-          className="hero-primary-cta inline-flex h-12 min-w-0 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+          className="hero-primary-cta inline-flex h-12 min-w-0 items-center justify-center rounded-[5px] bg-[#cc0d0d] px-5 text-sm font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
           href="/contact"
         >
           SCHEDULE NOW
@@ -344,7 +348,7 @@ export default function Home() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="service-card group relative flex cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)] md:p-[2.17rem]"
+              className="service-card group relative flex cursor-pointer flex-col overflow-hidden rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)] md:p-[2.17rem]"
             >
               <svg
                 className="service-card-arrow"
@@ -392,16 +396,20 @@ export default function Home() {
             <p className="type-regular mt-2 max-w-[42rem] text-white">
               Tell us what’s going on and we’ll help you figure out the next step.
             </p>
-            <ul className="mt-8 grid max-w-[32rem] gap-3">
-              {requestItems.map((item) => (
-                <li key={item} className="type-checklist flex items-center gap-3 text-white">
-                  <span className="icon-mask icon-checkbox text-[#169bd5]" aria-hidden="true" />
-                  {item}
-                </li>
+            <div className="type-regular mt-8 flex w-fit max-w-[42rem] flex-wrap items-start gap-x-8 gap-y-4 rounded-[5px] border border-white bg-[linear-gradient(90deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.25)_100%)] p-6 text-white">
+              {requestItemColumns.map((column, columnIndex) => (
+                <ul key={columnIndex} className="grid w-fit gap-4">
+                  {column.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-white">
+                      <span className="icon-mask icon-checkbox text-white" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               ))}
-            </ul>
+            </div>
             <Link
-              className="hero-primary-cta mt-12 inline-flex h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+              className="service-view-link type-text-link mt-12 inline-flex w-fit items-center pb-[1.45rem] uppercase text-white transition hover:text-white/82"
               href="/contact"
             >
               START A SERVICE REQUEST
@@ -447,7 +455,7 @@ export default function Home() {
               Getting help is simple
             </p>
             <Link
-              className="hero-primary-cta mt-10 hidden h-14 items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] lg:inline-flex"
+              className="hero-primary-cta mt-10 hidden h-14 items-center justify-center rounded-[5px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] lg:inline-flex"
               href="/contact"
             >
               REQUEST SERVICE
@@ -472,7 +480,7 @@ export default function Home() {
               </article>
             ))}
             <Link
-              className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] lg:hidden"
+              className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[5px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] lg:hidden"
               href="/contact"
             >
               REQUEST SERVICE
@@ -512,10 +520,10 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="mt-16 grid overflow-hidden lg:grid-cols-[minmax(0,calc((100vw-111rem)/2+55.5rem))_minmax(0,1fr)]">
-          <div className="flex items-center bg-[#eef6fc] px-6 py-10 sm:px-12 lg:py-14 lg:pl-[max(3rem,calc((100vw-111rem)/2+3rem))] lg:pr-12 xl:pr-16">
+        <div className="mx-auto mt-16 grid w-full max-w-[111rem] overflow-hidden lg:grid-cols-2">
+          <div className="flex items-center bg-[#eef6fc] px-6 py-10 sm:px-12 lg:px-12 lg:py-14 xl:px-16">
             <div className="w-full max-w-[42rem]">
-              <div className="grid max-w-[42rem] gap-x-10 gap-y-4 sm:grid-cols-2">
+              <div className="flex max-w-[42rem] flex-wrap items-start gap-x-10 gap-y-4">
                 {serviceAreaColumns.map((column, columnIndex) => (
                   <ul key={columnIndex} className="type-subheader grid self-start gap-4 text-[#273c5b]">
                     {column.map((area) => (
@@ -539,7 +547,7 @@ export default function Home() {
               alt="North Star HVAC service area map"
               fill
               className="object-cover object-center"
-              sizes="(min-width: 1024px) 50vw, 100vw"
+              sizes="(min-width: 1776px) 888px, (min-width: 1024px) 50vw, 100vw"
             />
           </div>
         </div>
@@ -556,7 +564,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[#152435]/20" aria-hidden="true" />
         <div className="relative z-20 mx-auto flex min-h-[38rem] w-[min(calc(100dvw-2rem),111rem)] items-center px-6 py-20 lg:px-12 lg:py-24">
-          <div className="flex max-w-[45rem] flex-col justify-center rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,rgba(252,253,252,0.96)_0%,rgba(233,240,246,0.92)_100%)] p-7 shadow-[0_28px_70px_rgba(21,36,53,0.28)] backdrop-blur-[2px] sm:p-10 lg:p-12">
+          <div className="flex max-w-[45rem] flex-col justify-center rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,rgba(252,253,252,0.96)_0%,rgba(233,240,246,0.92)_100%)] p-7 shadow-[0_28px_70px_rgba(21,36,53,0.28)] backdrop-blur-[2px] sm:p-10 lg:p-12">
             <h2 className="type-regular-header text-[#273c5b]">Spring AC Tune-Up Special</h2>
             <p className="type-large-text mt-6 text-[#273c5b]">
               Get your cooling system checked before the first heat wave hits.
@@ -565,7 +573,7 @@ export default function Home() {
               Includes airflow check, thermostat review, filter check, and system inspection.
             </p>
             <Link
-              className="hero-primary-cta mt-10 inline-flex h-14 w-fit items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+              className="hero-primary-cta mt-10 inline-flex h-14 w-fit items-center justify-center rounded-[5px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
               href="/contact"
             >
               SCHEDULE A TUNE UP
@@ -592,13 +600,13 @@ export default function Home() {
           </p>
           <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
+              className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[5px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
               href="/contact"
             >
               REQUEST SERVICE
             </Link>
             <a
-              className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[6px] border-[1pt] border-white/70 bg-transparent px-7 text-base uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+              className="phone-cta inline-flex h-14 w-full items-center justify-center gap-2 rounded-[5px] border-[1pt] border-white/70 bg-transparent px-7 text-base uppercase tracking-[0.04em] text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
               href="tel:+13365552121"
             >
               <span className="icon-mask icon-phone" aria-hidden="true" />

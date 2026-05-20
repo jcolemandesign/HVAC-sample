@@ -139,7 +139,7 @@ export function UpdatePasswordForm() {
 
   return (
     <form
-      className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-7 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-9"
+      className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-7 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-9"
       onSubmit={handleSubmit}
     >
       <p className="type-eyebrow uppercase text-[#273c5b]">Password recovery</p>
@@ -147,7 +147,7 @@ export function UpdatePasswordForm() {
 
       {message ? (
         <p
-          className={`type-small mt-4 rounded-[6px] border px-4 py-3 ${
+          className={`type-small mt-4 rounded-[5px] border px-4 py-3 ${
             isError
               ? "border-[#cc0d0d]/30 bg-[#cc0d0d]/10 text-[#cc0d0d]"
               : "border-[#169bd5]/30 bg-[#169bd5]/10 text-[#273c5b]"
@@ -162,7 +162,7 @@ export function UpdatePasswordForm() {
           New password
           <input
             autoComplete="new-password"
-            className="type-regular h-12 rounded-[6px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15 disabled:opacity-65"
+            className="type-regular h-12 rounded-[5px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15 disabled:opacity-65"
             disabled={isBusy || isError}
             minLength={8}
             onChange={(event) => setPassword(event.target.value)}
@@ -177,7 +177,7 @@ export function UpdatePasswordForm() {
           Confirm password
           <input
             autoComplete="new-password"
-            className="type-regular h-12 rounded-[6px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15 disabled:opacity-65"
+            className="type-regular h-12 rounded-[5px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15 disabled:opacity-65"
             disabled={isBusy || isError}
             minLength={8}
             onChange={(event) => setConfirmPassword(event.target.value)}
@@ -190,7 +190,7 @@ export function UpdatePasswordForm() {
       </div>
 
       <button
-        className="hero-primary-cta mt-8 inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-6 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] disabled:cursor-wait disabled:opacity-70"
+        className="hero-primary-cta mt-8 inline-flex h-12 w-full items-center justify-center rounded-[5px] bg-[#cc0d0d] px-6 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] disabled:cursor-wait disabled:opacity-70"
         disabled={isBusy || isError}
         type="submit"
       >

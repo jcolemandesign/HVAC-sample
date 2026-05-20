@@ -45,10 +45,10 @@ export default function UpdatePasswordPage() {
 
 function UpdatePasswordFallback() {
   return (
-    <div className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-7 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-9">
+    <div className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-7 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-9">
       <p className="type-eyebrow uppercase text-[#273c5b]">Password recovery</p>
       <h1 className="type-card-header mt-3 text-[#273c5b]">Checking recovery link</h1>
-      <p className="type-small mt-4 rounded-[6px] border border-[#169bd5]/30 bg-[#169bd5]/10 px-4 py-3 text-[#273c5b]">
+      <p className="type-small mt-4 rounded-[5px] border border-[#169bd5]/30 bg-[#169bd5]/10 px-4 py-3 text-[#273c5b]">
         Preparing your password reset form...
       </p>
     </div>

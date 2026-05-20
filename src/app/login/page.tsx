@@ -101,7 +101,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             </p>
           </div>
 
-          <div className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-7 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-9">
+          <div className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-7 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-9">
             <form action={signIn}>
               <div>
                 <p className="type-eyebrow uppercase text-[#273c5b]">
@@ -111,12 +111,12 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                   Welcome back
                 </h2>
                 {loggedOut ? (
-                  <p className="type-small mt-4 rounded-[6px] border border-[#169bd5]/30 bg-[#169bd5]/10 px-4 py-3 text-[#273c5b]">
+                  <p className="type-small mt-4 rounded-[5px] border border-[#169bd5]/30 bg-[#169bd5]/10 px-4 py-3 text-[#273c5b]">
                     You have been logged out.
                   </p>
                 ) : null}
                 {errorMessage ? (
-                  <p className="type-small mt-4 rounded-[6px] border border-[#cc0d0d]/30 bg-[#cc0d0d]/10 px-4 py-3 text-[#cc0d0d]">
+                  <p className="type-small mt-4 rounded-[5px] border border-[#cc0d0d]/30 bg-[#cc0d0d]/10 px-4 py-3 text-[#cc0d0d]">
                     {errorMessage}
                   </p>
                 ) : null}
@@ -127,7 +127,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                   Email address
                   <input
                     autoComplete="email"
-                    className="type-regular h-12 rounded-[6px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15"
+                    className="type-regular h-12 rounded-[5px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15"
                     name="email"
                     placeholder="admin@example.com"
                     required
@@ -139,7 +139,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                   Password
                   <input
                     autoComplete="current-password"
-                    className="type-regular h-12 rounded-[6px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15"
+                    className="type-regular h-12 rounded-[5px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15"
                     name="password"
                     placeholder="Enter password"
                     required
@@ -149,7 +149,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               </div>
 
               <button
-                className="hero-primary-cta mt-8 inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-6 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+                className="hero-primary-cta mt-8 inline-flex h-12 w-full items-center justify-center rounded-[5px] bg-[#cc0d0d] px-6 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
                 type="submit"
               >
                 Sign In

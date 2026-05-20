@@ -66,31 +66,31 @@ const urgencyOrder = [
 ];
 
 const fieldClass =
-  "type-regular h-11 rounded-[6px] border border-[#273c5b]/24 bg-white/85 px-3 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
+  "type-regular h-11 rounded-[5px] border border-[#273c5b]/24 bg-white/85 px-3 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
 
 const selectFieldClass =
-  "form-select-field type-regular h-11 rounded-[6px] border border-[#273c5b]/24 bg-white/85 pl-3 pr-12 text-[#152435] outline-none transition focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
+  "form-select-field type-regular h-11 rounded-[5px] border border-[#273c5b]/24 bg-white/85 pl-3 pr-12 text-[#152435] outline-none transition focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
 
 const filterFieldClass =
-  "type-small h-11 rounded-[6px] border border-[#273c5b]/24 bg-white/85 px-3 font-normal text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
+  "type-small h-11 rounded-[5px] border border-[#273c5b]/24 bg-white/85 px-3 font-normal text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
 
 const filterSelectFieldClass =
-  "form-select-field type-small h-11 rounded-[6px] border border-[#273c5b]/24 bg-white/85 pl-3 pr-12 font-normal text-[#152435] outline-none transition focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
+  "form-select-field type-small h-11 rounded-[5px] border border-[#273c5b]/24 bg-white/85 pl-3 pr-12 font-normal text-[#152435] outline-none transition focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15";
 
 const labelClass =
   "type-small grid gap-2 font-semibold uppercase tracking-[0.08em] text-[#273c5b]";
 
 const secondaryButtonClass =
-  "type-text-link inline-flex h-11 w-full items-center justify-center whitespace-nowrap rounded-[6px] border border-[#169bd5]/55 bg-[#169bd5]/10 px-4 text-[#273c5b] transition hover:border-[#169bd5] hover:bg-[#169bd5]/18 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
+  "type-text-link inline-flex h-11 w-full items-center justify-center whitespace-nowrap rounded-[5px] border border-[#169bd5]/55 bg-[#169bd5]/10 px-4 text-[#273c5b] transition hover:border-[#169bd5] hover:bg-[#169bd5]/18 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
 
 const primaryButtonClass =
-  "type-text-link inline-flex h-11 w-full items-center justify-center whitespace-nowrap rounded-[6px] bg-[#169bd5] px-4 text-white transition hover:bg-[#128ac0] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
+  "type-text-link inline-flex h-11 w-full items-center justify-center whitespace-nowrap rounded-[5px] bg-[#169bd5] px-4 text-white transition hover:bg-[#128ac0] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
 
 const compactSecondaryButtonClass =
-  "type-small inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-[6px] border border-[#169bd5]/55 bg-[#169bd5]/10 px-3 font-semibold uppercase tracking-[0.08em] text-[#273c5b] transition hover:border-[#169bd5] hover:bg-[#169bd5]/18 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
+  "type-small inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-[5px] border border-[#169bd5]/55 bg-[#169bd5]/10 px-3 font-semibold uppercase tracking-[0.08em] text-[#273c5b] transition hover:border-[#169bd5] hover:bg-[#169bd5]/18 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
 
 const compactPrimaryButtonClass =
-  "type-small inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-[6px] bg-[#169bd5] px-3 font-semibold uppercase tracking-[0.08em] text-white transition hover:bg-[#128ac0] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
+  "type-small inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-[5px] bg-[#169bd5] px-3 font-semibold uppercase tracking-[0.08em] text-white transition hover:bg-[#128ac0] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto";
 
 function formatDate(value: string | null) {
   if (!value) {
@@ -257,7 +257,7 @@ export function LeadDashboard({
 
   return (
     <>
-      <div className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
+      <div className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
         <div className="grid gap-4 lg:grid-cols-[1fr_0.7fr_0.7fr_0.8fr_0.7fr] lg:items-end">
           <label className={labelClass}>
             Search
@@ -337,7 +337,7 @@ export function LeadDashboard({
       </div>
 
       {leads.length === 0 ? (
-        <div className="mt-6 rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 text-center shadow-[0_18px_36px_rgba(21,36,53,0.08)]">
+        <div className="mt-6 rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 text-center shadow-[0_18px_36px_rgba(21,36,53,0.08)]">
           <h2 className="type-card-header text-[#273c5b]">No leads yet</h2>
           <p className="type-regular mt-3 text-[#273c5b]">
             New website contact requests will appear here after they are saved.
@@ -346,7 +346,7 @@ export function LeadDashboard({
       ) : null}
 
       {leads.length > 0 && visibleLeads.length === 0 ? (
-        <div className="mt-6 rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 text-center shadow-[0_18px_36px_rgba(21,36,53,0.08)]">
+        <div className="mt-6 rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 text-center shadow-[0_18px_36px_rgba(21,36,53,0.08)]">
           <h2 className="type-card-header text-[#273c5b]">No matching leads</h2>
           <p className="type-regular mt-3 text-[#273c5b]">
             Clear filters or adjust your search to see more submissions.
@@ -362,7 +362,7 @@ export function LeadDashboard({
 
             return (
               <article
-                className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6"
+                className="rounded-[5px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6"
                 key={lead.id}
               >
                 <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-start">
@@ -427,7 +427,7 @@ export function LeadDashboard({
                 </div>
 
                 <div
-                  className={`${isDetailsOpen ? "block" : "hidden"} mt-5 rounded-[6px] border border-[#273c5b]/10 bg-white/55 p-4 md:block`}
+                  className={`${isDetailsOpen ? "block" : "hidden"} mt-5 rounded-[5px] border border-[#273c5b]/10 bg-white/55 p-4 md:block`}
                 >
                   <p className="type-small font-semibold uppercase tracking-[0.08em] text-[#273c5b]/70">
                     Description
@@ -439,7 +439,7 @@ export function LeadDashboard({
 
                 <form
                   action={updateLead}
-                  className="mt-5 grid gap-4 rounded-[6px] border border-[#273c5b]/10 bg-white/55 p-4 lg:grid-cols-[0.35fr_1fr_auto] lg:items-end"
+                  className="mt-5 grid gap-4 rounded-[5px] border border-[#273c5b]/10 bg-white/55 p-4 lg:grid-cols-[0.35fr_1fr_auto] lg:items-end"
                 >
                   <input name="leadId" type="hidden" value={leadId} />
                   <label className={labelClass}>

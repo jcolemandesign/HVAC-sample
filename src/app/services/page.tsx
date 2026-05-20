@@ -53,7 +53,7 @@ export default function ServicesPage() {
       <section className="mx-auto w-[min(calc(100dvw-2.5rem),72rem)] py-14">
         <div className="grid gap-5 md:grid-cols-2">
           {serviceItems.map((item) => (
-            <article key={item} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <article key={item} className="rounded-[5px] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="text-xl font-bold">{item}</h2>
               <p className="mt-3 leading-7 text-slate-600">
                 Placeholder copy for a future service page section.
