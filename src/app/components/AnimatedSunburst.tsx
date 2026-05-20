@@ -9,24 +9,23 @@ export function AnimatedSunburst() {
   useEffect(() => {
     const sunburst = sunburstRef.current;
     const section = sunburst?.closest("section");
-    const target = section?.querySelector("[data-services-intro]");
 
-    if (!sunburst || !target) {
+    if (!sunburst || !section) {
       return;
     }
 
     let startTimer: number | undefined;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.98) {
-          startTimer = window.setTimeout(() => setIsActive(true), 2000);
+        if (entry.isIntersecting) {
+          startTimer = window.setTimeout(() => setIsActive(true), 350);
           observer.disconnect();
         }
       },
-      { threshold: [0.98] },
+      { rootMargin: "35% 0px 0px 0px", threshold: 0.02 },
     );
 
-    observer.observe(target);
+    observer.observe(section);
 
     return () => {
       observer.disconnect();

@@ -80,7 +80,7 @@ const reasons = [
       "We explain what’s happening, what can wait, and what needs attention now.",
   },
   {
-    title: "No-pressure Options",
+    title: "Repair-First Approach",
     description:
       "Repair, maintenance, and replacement recommendations based on your home and budget.",
   },
@@ -195,12 +195,12 @@ export default function Home() {
   return (
     <>
       <header className="site-header z-50 bg-[var(--primary-blue)] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
-        <div className="site-header-inner mx-auto flex w-full items-center justify-between gap-5 px-4 xl:w-[min(calc(100dvw-2rem),111rem)] xl:px-1 xl:py-3">
+        <div className="site-header-inner mx-auto flex w-full items-center justify-between gap-5 px-4 min-[1120px]:w-[min(calc(100dvw-2rem),111rem)] min-[1120px]:px-1 min-[1120px]:py-3">
           <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
-            <Image src={logo} alt="North Star HVAC" className="h-auto w-44 xl:w-44" priority />
+            <Image src={logo} alt="North Star HVAC" className="h-auto w-44" priority />
           </Link>
           <button
-            className="inline-flex h-11 items-center gap-2 rounded-[6px] px-2 text-[0.95rem] font-bold text-white xl:hidden"
+            className="inline-flex h-11 items-center gap-2 rounded-[6px] px-2 text-[0.95rem] font-bold text-white min-[1120px]:hidden"
             type="button"
             aria-label="Open main menu"
           >
@@ -209,7 +209,7 @@ export default function Home() {
           </button>
           <nav
             aria-label="Main navigation"
-            className="hidden flex-wrap gap-x-7 gap-y-2 text-[0.95rem] font-semibold text-white/86 xl:ml-12 xl:flex"
+            className="hidden flex-wrap gap-x-7 gap-y-2 text-[0.95rem] font-semibold text-white/86 min-[1120px]:ml-12 min-[1120px]:flex"
           >
             {navigationItems.map((item) => {
               const hasDropdown = item === "Services" || item === "Service Areas";
@@ -228,7 +228,7 @@ export default function Home() {
               );
             })}
           </nav>
-          <div className="hidden flex-col gap-[0.8rem] sm:flex-row xl:ml-auto xl:flex">
+          <div className="hidden flex-col gap-[0.8rem] sm:flex-row min-[1120px]:ml-auto min-[1120px]:flex">
             <a
               className="phone-cta inline-flex h-10 w-full items-center justify-center gap-2 rounded-[6px] border-[1pt] border-white/70 bg-transparent px-4 text-sm text-white shadow-[0_14px_30px_rgba(21,36,53,0.16)] transition hover:border-white hover:bg-white/10 sm:w-fit"
               href="tel:+13365552121"
@@ -246,9 +246,9 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="min-h-screen overflow-x-clip bg-[#eef6fc] pb-[calc(4.75rem+env(safe-area-inset-bottom))] pt-[calc(4rem+env(safe-area-inset-top))] text-[#273c5b] xl:pb-0 xl:pt-0">
+      <main className="min-h-screen overflow-x-clip bg-[#eef6fc] pb-[calc(4.75rem+env(safe-area-inset-bottom))] pt-[calc(4rem+env(safe-area-inset-top))] text-[#273c5b] min-[1120px]:pb-0 min-[1120px]:pt-0">
       <section className="mobile-hero-section relative overflow-hidden bg-[var(--primary-blue)]">
-        <div className="absolute right-0 top-0 hidden h-[51rem] w-[85.333rem] max-w-none xl:block">
+        <div className="absolute right-0 top-0 hidden h-[51rem] w-[85.333rem] max-w-none min-[1120px]:block">
           <Image
             src={heroImage}
             alt="North Star HVAC technician greeting a homeowner"
@@ -258,8 +258,8 @@ export default function Home() {
           />
         </div>
 
-        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col md:w-[min(calc(100dvw-2rem),111rem)] md:py-16 xl:min-h-[51rem] xl:items-start xl:justify-center">
-          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:px-9 md:py-10 xl:max-w-[50vw] xl:px-12 xl:py-12">
+        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col min-[1120px]:min-h-[51rem] min-[1120px]:w-[min(calc(100dvw-2rem),111rem)] min-[1120px]:items-start min-[1120px]:justify-center">
+          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:px-9 md:py-10 min-[1120px]:max-w-[50vw] min-[1120px]:px-12 min-[1120px]:py-12">
             <p className="type-eyebrow max-w-full uppercase text-white">
               Local HVAC Service in Huntersville, NC
             </p>
@@ -269,7 +269,7 @@ export default function Home() {
             <p className="type-regular mt-5 max-w-full text-white md:mt-6 md:max-w-[44rem]">
               AC repair, heating service, and system replacement with straightforward recommendations and upfront pricing.
             </p>
-            <div className="mt-8 hidden flex-col gap-3 sm:flex-row sm:items-center xl:flex">
+            <div className="mt-8 hidden flex-col gap-3 sm:flex-row sm:items-center min-[1120px]:flex">
               <Link
                 className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
                 href="/contact"
@@ -285,7 +285,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="mobile-hero-image relative w-full xl:hidden">
+          <div className="mobile-hero-image relative w-full min-[1120px]:hidden">
             <Image
               src={mobileHeroImage}
               alt="North Star HVAC technician greeting a homeowner"
@@ -300,7 +300,8 @@ export default function Home() {
         <HeroTrustMarquee items={trustItems} />
       </section>
 
-      <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-3 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] xl:hidden">
+      <div className="mobile-action-bar fixed inset-x-0 bottom-0 z-50 bg-[var(--primary-blue)] px-4 pt-3 text-white shadow-[0_-16px_34px_rgba(21,36,53,0.18)] min-[1120px]:hidden">
+        <div className="mx-auto grid w-full max-w-[34rem] grid-cols-2 gap-3">
         <a
           className="phone-cta relative inline-flex h-12 items-center justify-center rounded-[6px] border-[1pt] border-white/70 px-9 text-sm text-white transition hover:border-white hover:bg-white/10"
           href="tel:+13365552121"
@@ -315,6 +316,7 @@ export default function Home() {
         >
           SCHEDULE NOW
         </Link>
+        </div>
       </div>
 
       <section id="services" className="relative overflow-hidden bg-[#eef6fc] pb-[8rem] pt-[8.2rem] lg:pb-[9.25rem] lg:pt-[9.7rem]">
@@ -335,7 +337,7 @@ export default function Home() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="service-card group relative flex min-h-[18.5rem] cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)] md:p-[2.8rem]"
+              className="service-card group relative flex cursor-pointer flex-col overflow-hidden rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-8 shadow-[0_18px_36px_rgba(21,36,53,0.08)] md:p-[2.17rem]"
             >
               <svg
                 className="service-card-arrow"
@@ -354,11 +356,11 @@ export default function Home() {
               <h3 className="type-card-header pr-14 text-[#273c5b]">
                 {service.title}
               </h3>
-              <p className="type-regular mt-5 max-w-[31rem] text-[#273c5b] md:mt-10">
+              <p className="type-regular mt-5 max-w-[31rem] text-[#273c5b] md:mt-[1.6rem]">
                 {service.description}
               </p>
               <Link
-                className="service-card-learn-more mt-6 inline-flex w-fit text-[#152435] transition hover:text-[#273c5b] md:mt-auto md:pt-6"
+                className="service-card-learn-more mt-5 inline-flex w-fit text-[#152435] transition hover:text-[#273c5b] md:mt-auto md:pt-4"
                 href="/services"
               >
                 Learn More
@@ -376,14 +378,16 @@ export default function Home() {
               How can we help?
             </h2>
             <p className="type-large-text mt-8 text-white">
-              AC not keeping up? Heat not turning on? Weird noise from the unit?
+              AC not keeping up? Heat not turning on?
+              <br />
+              Weird noise from the unit?
             </p>
             <p className="type-regular mt-2 max-w-[42rem] text-white">
               Tell us what’s going on and we’ll help you figure out the next step.
             </p>
-            <ul className="mt-10 grid max-w-[42rem] gap-x-8 gap-y-5 sm:grid-cols-[max-content_max-content]">
+            <ul className="mt-8 grid max-w-[32rem] gap-3">
               {requestItems.map((item) => (
-                <li key={item} className="type-checklist flex items-center gap-4 text-white">
+                <li key={item} className="type-checklist flex items-center gap-3 text-white">
                   <span className="icon-mask icon-checkbox text-[#169bd5]" aria-hidden="true" />
                   {item}
                 </li>
@@ -501,9 +505,9 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="mx-auto mt-16 grid w-[min(calc(100dvw-2rem),111rem)] overflow-hidden lg:grid-cols-2">
-          <div className="flex items-center bg-[#eef6fc] px-6 py-10 sm:px-12 lg:px-12 lg:py-14 xl:px-16">
-            <div className="w-full">
+        <div className="mt-16 grid overflow-hidden lg:grid-cols-[minmax(0,calc((100vw-111rem)/2+55.5rem))_minmax(0,1fr)]">
+          <div className="flex items-center bg-[#eef6fc] px-6 py-10 sm:px-12 lg:py-14 lg:pl-[max(3rem,calc((100vw-111rem)/2+3rem))] lg:pr-12 xl:pr-16">
+            <div className="w-full max-w-[42rem]">
               <div className="grid max-w-[42rem] gap-x-10 gap-y-4 sm:grid-cols-2">
                 {serviceAreaColumns.map((column, columnIndex) => (
                   <ul key={columnIndex} className="type-subheader grid self-start gap-4 text-[#273c5b]">
@@ -636,7 +640,7 @@ export default function Home() {
                 Support@northstarhvac.com
               </a>
 
-              <div className="type-large-text mt-9 text-white">
+              <div className="type-regular mt-9 text-white">
                 <p>Monday-Friday: 8:00 AM-6:00 PM</p>
                 <p>Saturday: 9:00 AM-2:00 PM</p>
                 <p>Sunday: Closed</p>
@@ -655,7 +659,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <address className="type-large-text mt-9 not-italic text-white">
+              <address className="type-regular mt-9 not-italic text-white">
                 North Star HVAC
                 <br />
                 12814 Statesville Road, Suite 204

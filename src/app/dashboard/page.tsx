@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
+import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import logo from "../../../public/logo-temp.svg";
 import { createClient } from "@/utils/supabase/server";
 import { LeadDashboard, type Lead } from "./lead-dashboard";
 
@@ -129,88 +131,81 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
   const latestLeadDate = leads[0]?.created_at ?? null;
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f7faf8] text-slate-950">
-      <header className="border-b border-slate-200/80 bg-white/90">
-        <div className="mx-auto flex w-[min(calc(100dvw-2.5rem),72rem)] flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="text-xl font-bold tracking-tight text-slate-950">
-            North Star HVAC
+    <main className="min-h-screen overflow-x-clip bg-[#eef6fc] text-[#273c5b]">
+      <header className="sticky top-0 z-50 bg-[var(--primary-blue)] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
+        <div className="mx-auto flex min-h-16 w-[min(calc(100dvw-2rem),111rem)] items-center justify-between gap-5 px-4 py-3 min-[1120px]:px-1">
+          <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
+            <Image src={logo} alt="North Star HVAC" className="h-auto w-40" priority />
           </Link>
-          <nav aria-label="Main navigation" className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-slate-700">
-            <Link className="transition hover:text-teal-700" href="/services">
-              Services
-            </Link>
-            <Link className="transition hover:text-teal-700" href="/about">
-              About
-            </Link>
-            <Link className="transition hover:text-teal-700" href="/contact">
-              Contact
-            </Link>
-            <Link className="text-teal-700" href="/dashboard">
-              Dashboard
-            </Link>
-          </nav>
           <form action={logout}>
             <button
-              className="inline-flex h-11 w-full items-center justify-center rounded-md border border-slate-300 bg-white px-5 text-sm font-bold text-slate-900 transition hover:border-teal-700 hover:text-teal-800 sm:w-auto"
+              className="type-small inline-flex h-10 max-w-48 items-center justify-center whitespace-nowrap rounded-[6px] border border-white/55 bg-transparent px-5 font-light uppercase tracking-[0.08em] text-white transition hover:border-white hover:bg-transparent"
               type="submit"
             >
-              Log out
+              Log Out
             </button>
           </form>
         </div>
       </header>
 
-      <section className="bg-white">
-        <div className="mx-auto w-[min(calc(100dvw-2.5rem),72rem)] py-12 sm:py-16">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
+      <section className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
+        <div className="absolute left-[-18rem] top-[-22rem] h-[50rem] w-[50rem] rounded-full bg-white/45 blur-3xl" aria-hidden="true" />
+        <div className="relative z-10 mx-auto w-[min(calc(100dvw-2rem),86rem)] px-4 min-[1120px]:px-1">
+          <p className="type-eyebrow uppercase text-[#273c5b]">
             Admin dashboard
           </p>
-          <div className="mt-4 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="mt-4 grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <h1 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+              <h1 className="type-regular-header max-w-3xl text-[#273c5b]">
                 Website leads
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+              <p className="type-regular mt-5 max-w-2xl text-[#273c5b]">
                 Review incoming contact form submissions from Supabase and keep
                 light CRM notes current.
               </p>
             </div>
             <Link
-              className="inline-flex h-12 w-full items-center justify-center rounded-md bg-teal-700 px-6 text-base font-bold text-white shadow-sm transition hover:bg-teal-800 sm:w-auto"
+              className="type-small inline-flex h-12 max-w-72 items-center justify-center whitespace-nowrap rounded-[6px] border border-[#273c5b]/55 bg-transparent px-6 font-light uppercase tracking-[0.08em] text-[#273c5b] transition hover:border-[#273c5b] hover:bg-transparent sm:w-auto"
               href="/contact"
             >
-              View contact form
+              View Contact Form
             </Link>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <article className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
+              <p className="type-eyebrow uppercase text-[#273c5b]">
+                Total leads
+              </p>
+              <p className="font-semiexpanded mt-3 text-[2.6rem] font-light leading-none text-[#273c5b]">
+                {totalLeads}
+              </p>
+            </article>
+            <article className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
+              <p className="type-eyebrow uppercase text-[#273c5b]">
+                New leads
+              </p>
+              <p className="font-semiexpanded mt-3 text-[2.6rem] font-light leading-none text-[#273c5b]">
+                {newLeads}
+              </p>
+            </article>
+            <article className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-5 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-6">
+              <p className="type-eyebrow uppercase text-[#273c5b]">
+                Latest lead date
+              </p>
+              <p className="type-large-text mt-3 text-[#273c5b]">
+                {formatDate(latestLeadDate)}
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto w-[min(calc(100dvw-2.5rem),72rem)] py-10">
-        <div className="grid gap-5 md:grid-cols-3">
-          <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-              Total leads
-            </p>
-            <p className="mt-4 text-4xl font-bold">{totalLeads}</p>
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-              New leads
-            </p>
-            <p className="mt-4 text-4xl font-bold">{newLeads}</p>
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-              Latest lead date
-            </p>
-            <p className="mt-4 text-2xl font-bold">{formatDate(latestLeadDate)}</p>
-          </article>
-        </div>
-
+      <section className="mx-auto w-[min(calc(100dvw-2rem),86rem)] px-4 pb-16 min-[1120px]:px-1 lg:pb-20">
         {error ? (
-          <div className="mt-8 rounded-lg border border-red-200 bg-red-50 p-6 text-red-700">
-            <p className="font-bold">Could not load leads.</p>
-            <p className="mt-2 text-sm leading-6">{error.message}</p>
+          <div className="rounded-[8px] border border-[#cc0d0d]/25 bg-[#cc0d0d]/10 p-6 text-[#cc0d0d]">
+            <p className="type-card-header">Could not load leads.</p>
+            <p className="type-small mt-2">{error.message}</p>
           </div>
         ) : null}
 

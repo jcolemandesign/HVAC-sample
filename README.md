@@ -18,6 +18,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Supabase Auth Redirect URLs
+
+Password recovery emails redirect to `/update-password`. Add each deployed origin plus the local development URL to Supabase Auth redirect URL configuration:
+
+- `http://localhost:3000/update-password`
+- `https://your-production-domain.com/update-password`
+
+The login password reset form uses `redirectTo: \`${window.location.origin}/update-password\`` so each environment sends users back to the matching origin.
+
+Password reset emails use an implicit recovery link for this public route so `/update-password` receives `access_token` and `refresh_token` values in the URL hash instead of depending on a PKCE code verifier cookie. The rest of the app auth flow continues to use `@supabase/ssr`.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More

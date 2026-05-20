@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import logo from "../../../public/logo-temp.svg";
+import { PasswordResetRequest } from "./PasswordResetRequest";
 import { createClient } from "@/utils/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -73,97 +76,87 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         : null;
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f7faf8] text-slate-950">
-      <header className="border-b border-slate-200/80 bg-white/90">
-        <div className="mx-auto flex w-[min(calc(100dvw-2.5rem),72rem)] flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="text-xl font-bold tracking-tight text-slate-950">
-            North Star HVAC
+    <main className="min-h-screen overflow-x-clip bg-[#eef6fc] text-[#273c5b]">
+      <header className="bg-[var(--primary-blue)] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
+        <div className="mx-auto flex min-h-16 w-[min(calc(100dvw-2rem),111rem)] items-center justify-between gap-5 px-4 py-3 min-[1120px]:px-1">
+          <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
+            <Image src={logo} alt="North Star HVAC" className="h-auto w-44" priority />
           </Link>
-          <nav aria-label="Main navigation" className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-slate-700">
-            <Link className="transition hover:text-teal-700" href="/services">
-              Services
-            </Link>
-            <Link className="transition hover:text-teal-700" href="/about">
-              About
-            </Link>
-            <Link className="transition hover:text-teal-700" href="/contact">
-              Contact
-            </Link>
-          </nav>
         </div>
       </header>
 
-      <section className="bg-white">
-        <div className="mx-auto grid w-[min(calc(100dvw-2.5rem),72rem)] gap-8 py-16 sm:py-20 lg:grid-cols-[1fr_0.55fr] lg:items-center">
+      <section className="relative overflow-hidden py-[6.5rem] lg:py-[7.8rem]">
+        <div className="absolute left-[-18rem] top-[-20rem] h-[48rem] w-[48rem] rounded-full bg-white/45 blur-3xl" aria-hidden="true" />
+        <div className="relative z-10 mx-auto grid w-[min(calc(100dvw-2rem),72rem)] gap-10 px-6 lg:grid-cols-[1fr_0.72fr] lg:items-center lg:px-0">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
+            <p className="type-eyebrow uppercase text-[#273c5b]">
               Dashboard login
             </p>
-            <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+            <h1 className="type-regular-header mt-4 max-w-3xl text-[#273c5b]">
               Sign in to manage website leads.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="type-regular mt-6 max-w-2xl text-[#273c5b]">
               Use your Supabase email and password account to access the private
               North Star HVAC lead dashboard.
             </p>
           </div>
 
-          <form
-            action={signIn}
-            className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
-          >
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-                Admin access
-              </p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight">
-                Welcome back
-              </h2>
-              {loggedOut ? (
-                <p className="mt-4 rounded-md border border-teal-200 bg-teal-50 px-4 py-3 text-sm font-semibold leading-6 text-teal-700">
-                  You have been logged out.
+          <div className="rounded-[8px] border border-white/80 bg-[linear-gradient(145deg,#fcfdfc_0%,#e9f0f6_100%)] p-7 shadow-[0_18px_36px_rgba(21,36,53,0.08)] sm:p-9">
+            <form action={signIn}>
+              <div>
+                <p className="type-eyebrow uppercase text-[#273c5b]">
+                  Admin access
                 </p>
-              ) : null}
-              {errorMessage ? (
-                <p className="mt-4 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold leading-6 text-red-700">
-                  {errorMessage}
-                </p>
-              ) : null}
-            </div>
+                <h2 className="type-card-header mt-3 text-[#273c5b]">
+                  Welcome back
+                </h2>
+                {loggedOut ? (
+                  <p className="type-small mt-4 rounded-[6px] border border-[#169bd5]/30 bg-[#169bd5]/10 px-4 py-3 text-[#273c5b]">
+                    You have been logged out.
+                  </p>
+                ) : null}
+                {errorMessage ? (
+                  <p className="type-small mt-4 rounded-[6px] border border-[#cc0d0d]/30 bg-[#cc0d0d]/10 px-4 py-3 text-[#cc0d0d]">
+                    {errorMessage}
+                  </p>
+                ) : null}
+              </div>
 
-            <div className="mt-8 grid gap-5">
-              <label className="grid gap-2 text-sm font-semibold text-slate-800">
-                Email address
-                <input
-                  autoComplete="email"
-                  className="h-12 rounded-md border border-slate-300 px-4 text-base font-normal text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10"
-                  name="email"
-                  placeholder="admin@example.com"
-                  required
-                  type="email"
-                />
-              </label>
+              <div className="mt-8 grid gap-5">
+                <label className="type-small grid gap-2 font-semibold uppercase tracking-[0.08em] text-[#273c5b]">
+                  Email address
+                  <input
+                    autoComplete="email"
+                    className="type-regular h-12 rounded-[6px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15"
+                    name="email"
+                    placeholder="admin@example.com"
+                    required
+                    type="email"
+                  />
+                </label>
 
-              <label className="grid gap-2 text-sm font-semibold text-slate-800">
-                Password
-                <input
-                  autoComplete="current-password"
-                  className="h-12 rounded-md border border-slate-300 px-4 text-base font-normal text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10"
-                  name="password"
-                  placeholder="Enter password"
-                  required
-                  type="password"
-                />
-              </label>
-            </div>
+                <label className="type-small grid gap-2 font-semibold uppercase tracking-[0.08em] text-[#273c5b]">
+                  Password
+                  <input
+                    autoComplete="current-password"
+                    className="type-regular h-12 rounded-[6px] border border-[#273c5b]/24 bg-white/80 px-4 text-[#152435] outline-none transition placeholder:text-[#273c5b]/45 focus:border-[#169bd5] focus:ring-4 focus:ring-[#169bd5]/15"
+                    name="password"
+                    placeholder="Enter password"
+                    required
+                    type="password"
+                  />
+                </label>
+              </div>
 
-            <button
-              className="mt-8 inline-flex h-12 w-full items-center justify-center rounded-md bg-teal-700 px-6 text-base font-bold text-white shadow-sm transition hover:bg-teal-800"
-              type="submit"
-            >
-              Sign in
-            </button>
-          </form>
+              <button
+                className="hero-primary-cta mt-8 inline-flex h-12 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-6 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212]"
+                type="submit"
+              >
+                Sign In
+              </button>
+            </form>
+            <PasswordResetRequest />
+          </div>
         </div>
       </section>
     </main>

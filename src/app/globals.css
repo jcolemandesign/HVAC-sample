@@ -5,68 +5,68 @@
   --foreground: #273c5b;
   --primary-blue: #273c5b;
   --bright-blue: #169bd5;
-  --type-headline-emphasized-size: 5.175rem;
+  --type-headline-emphasized-size: clamp(4.5rem, calc(2.96591rem + 2.04545vw), 5.175rem);
   --type-headline-emphasized-line: 0.98;
-  --type-main-header-size: 4.25rem;
+  --type-main-header-size: clamp(3.75rem, calc(2.61364rem + 1.51515vw), 4.25rem);
   --type-main-header-line: 1.04;
-  --type-regular-header-size: 3.875rem;
+  --type-regular-header-size: clamp(3.375rem, calc(2.23864rem + 1.51515vw), 3.875rem);
   --type-regular-header-line: 1.04;
-  --type-subheader-size: 1.9125rem;
+  --type-subheader-size: clamp(1.71rem, calc(1.24977rem + 0.61364vw), 1.9125rem);
   --type-subheader-line: 1.2;
-  --type-subheader-emphasized-size: 2.205rem;
+  --type-subheader-emphasized-size: clamp(1.98rem, calc(1.46864rem + 0.68182vw), 2.205rem);
   --type-subheader-emphasized-line: 1.12;
-  --type-card-header-size: 1.63125rem;
+  --type-card-header-size: clamp(1.4625rem, calc(1.07898rem + 0.51136vw), 1.63125rem);
   --type-card-header-line: 1.14;
-  --type-large-size: 1.40625rem;
+  --type-large-size: clamp(1.2375rem, calc(0.85398rem + 0.51136vw), 1.40625rem);
   --type-large-line: 1.24;
-  --type-regular-size: 1.2375rem;
-  --type-regular-line: 1.575rem;
-  --type-small-size: 0.9rem;
-  --type-small-line: 1.29375rem;
-  --type-banner-size: 1rem;
+  --type-regular-size: clamp(1.08rem, calc(0.72205rem + 0.47727vw), 1.2375rem);
+  --type-regular-line: clamp(1.4625rem, calc(1.20682rem + 0.34091vw), 1.575rem);
+  --type-small-size: clamp(0.855rem, calc(0.75273rem + 0.13636vw), 0.9rem);
+  --type-small-line: clamp(1.215rem, calc(1.03602rem + 0.23864vw), 1.29375rem);
+  --type-banner-size: clamp(0.9rem, calc(0.67273rem + 0.30303vw), 1rem);
   --type-banner-line: 1;
-  --type-eyebrow-size: 0.9rem;
+  --type-eyebrow-size: clamp(0.855rem, calc(0.75273rem + 0.13636vw), 0.9rem);
   --type-eyebrow-line: 1.35;
   --type-text-link-size: calc(var(--type-card-header-size) * 0.78);
-  --type-cta-size: 1rem;
+  --type-cta-size: clamp(0.9rem, calc(0.67273rem + 0.30303vw), 1rem);
 }
 
 @media (max-width: 1199px) {
   :root {
-    --type-headline-emphasized-size: 4.5rem;
-    --type-main-header-size: 3.75rem;
-    --type-regular-header-size: 3.375rem;
-    --type-subheader-size: 1.71rem;
-    --type-subheader-emphasized-size: 1.98rem;
-    --type-card-header-size: 1.4625rem;
-    --type-large-size: 1.2375rem;
-    --type-regular-size: 1.08rem;
-    --type-regular-line: 1.4625rem;
-    --type-small-size: 0.855rem;
-    --type-small-line: 1.215rem;
-    --type-banner-size: 0.9rem;
-    --type-eyebrow-size: 0.855rem;
-    --type-cta-size: 0.9rem;
+    --type-headline-emphasized-size: clamp(2.7rem, calc(-0.50742rem + 6.68213vw), 4.5rem);
+    --type-main-header-size: clamp(2.35rem, calc(-0.14466rem + 5.19722vw), 3.75rem);
+    --type-regular-header-size: clamp(2.1rem, calc(-0.17193rem + 4.73318vw), 3.375rem);
+    --type-subheader-size: clamp(1.08rem, calc(-0.0426rem + 2.33875vw), 1.71rem);
+    --type-subheader-emphasized-size: clamp(1.26rem, calc(-0.02297rem + 2.67285vw), 1.98rem);
+    --type-card-header-size: clamp(0.945rem, calc(0.02287rem + 1.92111vw), 1.4625rem);
+    --type-large-size: clamp(0.945rem, calc(0.42379rem + 1.08585vw), 1.2375rem);
+    --type-regular-size: clamp(0.9rem, calc(0.57926rem + 0.66821vw), 1.08rem);
+    --type-regular-line: clamp(1.35rem, calc(1.14954rem + 0.41763vw), 1.4625rem);
+    --type-small-size: clamp(0.7875rem, calc(0.66722rem + 0.25058vw), 0.855rem);
+    --type-small-line: clamp(1.125rem, calc(0.96463rem + 0.33411vw), 1.215rem);
+    --type-banner-size: clamp(0.72rem, calc(0.39926rem + 0.66821vw), 0.9rem);
+    --type-eyebrow-size: clamp(0.7875rem, calc(0.66722rem + 0.25058vw), 0.855rem);
+    --type-cta-size: clamp(0.78rem, calc(0.56617rem + 0.44548vw), 0.9rem);
   }
 }
 
 @media (max-width: 767px) {
   :root {
-    --type-headline-emphasized-size: 2.7rem;
+    --type-headline-emphasized-size: clamp(2.295rem, calc(1.93677rem + 1.59214vw), 2.7rem);
     --type-headline-emphasized-line: 1.02;
-    --type-main-header-size: 2.35rem;
-    --type-regular-header-size: 2.1rem;
-    --type-subheader-size: 1.08rem;
-    --type-subheader-emphasized-size: 1.26rem;
-    --type-card-header-size: 0.945rem;
-    --type-large-size: 0.945rem;
-    --type-regular-size: 0.9rem;
-    --type-regular-line: 1.35rem;
-    --type-small-size: 0.7875rem;
-    --type-small-line: 1.125rem;
-    --type-banner-size: 0.72rem;
-    --type-eyebrow-size: 0.7875rem;
-    --type-cta-size: 0.78rem;
+    --type-main-header-size: clamp(1.9975rem, calc(1.68571rem + 1.38575vw), 2.35rem);
+    --type-regular-header-size: clamp(1.785rem, calc(1.50638rem + 1.23833vw), 2.1rem);
+    --type-subheader-size: clamp(0.972rem, calc(0.87647rem + 0.42457vw), 1.08rem);
+    --type-subheader-emphasized-size: clamp(1.134rem, calc(1.02255rem + 0.49533vw), 1.26rem);
+    --type-card-header-size: clamp(0.8505rem, calc(0.76691rem + 0.3715vw), 0.945rem);
+    --type-large-size: clamp(0.8505rem, calc(0.76691rem + 0.3715vw), 0.945rem);
+    --type-regular-size: clamp(0.81rem, calc(0.73039rem + 0.35381vw), 0.9rem);
+    --type-regular-line: clamp(1.215rem, calc(1.09559rem + 0.53071vw), 1.35rem);
+    --type-small-size: clamp(0.70875rem, calc(0.63909rem + 0.30958vw), 0.7875rem);
+    --type-small-line: clamp(1.0125rem, calc(0.91299rem + 0.44226vw), 1.125rem);
+    --type-banner-size: clamp(0.648rem, calc(0.58431rem + 0.28305vw), 0.72rem);
+    --type-eyebrow-size: clamp(0.70875rem, calc(0.63909rem + 0.30958vw), 0.7875rem);
+    --type-cta-size: clamp(0.702rem, calc(0.63301rem + 0.30663vw), 0.78rem);
   }
 }
 
@@ -237,6 +237,14 @@ body {
   -webkit-mask-image: url("/icons-nav-dropdown.svg");
 }
 
+.form-select-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L7 7L12 2' stroke='%23273C5B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 1.25rem center;
+  background-repeat: no-repeat;
+  background-size: 0.875rem 0.5625rem;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -285,15 +293,15 @@ body {
 }
 
 .icon-checkbox {
-  width: 1.6rem;
-  height: 1.65rem;
+  width: 1.15rem;
+  height: 1.18rem;
   mask-image: url("/icons-checkbox.svg");
   -webkit-mask-image: url("/icons-checkbox.svg");
 }
 
 .icon-social {
-  width: 1.55rem;
-  height: 1.55rem;
+  width: 3.1rem;
+  height: 3.1rem;
 }
 
 .icon-linkedin {
@@ -331,6 +339,13 @@ body {
 
 .phone-cta .icon-phone {
   flex: 0 0 auto;
+}
+
+@media (max-width: 1119px) {
+  .mobile-hero-main .hero-primary-cta,
+  .mobile-hero-main .phone-cta {
+    width: min(100%, 17rem);
+  }
 }
 
 .service-view-link {
@@ -405,6 +420,7 @@ body {
 
 .service-card {
   height: 100%;
+  min-height: clamp(15rem, calc(10.45455rem + 6.06061vw), 17rem);
   transition:
     filter 220ms ease,
     box-shadow 220ms ease,
@@ -423,11 +439,15 @@ body {
 
 .service-card-learn-more {
   font-family: "Zalando Sans SemiExpanded", "Zalando Sans", sans-serif;
-  font-size: calc(var(--type-text-link-size) * 1.08);
+  font-size: calc(var(--type-text-link-size) * 0.96);
   font-weight: 300;
   font-variation-settings: "wdth" 125;
   line-height: 1;
   letter-spacing: 0.02em;
+}
+
+.service-card .type-card-header {
+  font-size: calc(var(--type-card-header-size) * 0.92);
 }
 
 @media (min-width: 768px) {
@@ -764,7 +784,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1119px) {
   .mobile-hero-section {
     display: flex;
     min-height: calc(100dvh - 4rem - 4.75rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
@@ -777,12 +797,14 @@ body {
 
   .mobile-hero-image {
     flex: 1 1 auto;
+    width: 100vw;
     height: clamp(22rem, 45vw, 34rem);
     min-height: 22rem;
+    margin: 0;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1120px) {
   .site-header {
     position: sticky;
     z-index: 50;
