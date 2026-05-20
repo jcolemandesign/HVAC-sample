@@ -65,7 +65,7 @@ export function HeroTrustMarquee({ items }: HeroTrustMarqueeProps) {
 
   return (
     <div
-      className="hero-trust-marquee relative z-20 bg-[var(--primary-blue)] py-[1.375rem] text-white shadow-[0_-18px_34px_rgba(21,36,53,0.22)]"
+      className="hero-trust-marquee relative z-20 bg-[#152435] py-[1.375rem] text-white shadow-[0_-18px_34px_rgba(21,36,53,0.22)]"
       onPointerEnter={() => setPlaybackRate(1.15)}
       onPointerLeave={() => setPlaybackRate(1)}
     >

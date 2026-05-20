@@ -589,6 +589,10 @@ body {
   overflow: hidden;
 }
 
+.hero-info-panel {
+  background: #152435;
+}
+
 .hero-trust-track {
   width: max-content;
 }
@@ -813,6 +817,12 @@ body {
 
   .site-header-inner {
     min-height: 0;
+  }
+
+  .hero-info-panel {
+    width: calc(min(42rem, 44vw) + ((100dvw - min(calc(100dvw - 1rem), 111rem)) / 2));
+    margin-left: calc((100dvw - min(calc(100dvw - 1rem), 111rem)) / -2);
+    padding: 2.25rem 2.25rem 2.25rem 3rem;
   }
 }
 

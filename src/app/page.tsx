@@ -247,7 +247,7 @@ export default function Home() {
       </header>
 
       <main className="min-h-screen overflow-x-clip bg-[#eef6fc] pb-[calc(4.75rem+env(safe-area-inset-bottom))] pt-[calc(4rem+env(safe-area-inset-top))] text-[#273c5b] min-[1120px]:pb-0 min-[1120px]:pt-0">
-      <section className="mobile-hero-section relative overflow-hidden bg-[var(--primary-blue)]">
+      <section className="mobile-hero-section relative overflow-hidden bg-[#152435] min-[1120px]:bg-[var(--primary-blue)]">
         <div className="absolute right-0 top-0 hidden h-[51rem] w-[85.333rem] max-w-none min-[1120px]:block">
           <Image
             src={heroImage}
@@ -258,17 +258,11 @@ export default function Home() {
           />
         </div>
 
-        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col min-[1120px]:min-h-[51rem] min-[1120px]:w-[min(calc(100dvw-2rem),111rem)] min-[1120px]:items-start min-[1120px]:justify-center">
-          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:px-9 md:py-10 min-[1120px]:max-w-[50vw] min-[1120px]:px-12 min-[1120px]:py-12">
-            <p className="type-eyebrow max-w-full uppercase text-white">
-              Local HVAC Service in Huntersville, NC
-            </p>
-            <h1 className="type-main-header mt-4 max-w-full text-white md:mt-5">
-              Keep your home comfortable through every season.
+        <div className="mobile-hero-main relative z-10 mx-auto flex w-full flex-col min-[1120px]:min-h-[51rem] min-[1120px]:w-[min(calc(100dvw-2rem),111rem)]">
+          <div className="min-w-0 overflow-hidden px-4 pb-8 pt-7 drop-shadow-[0_4px_18px_rgba(21,36,53,0.42)] md:px-9 md:py-10 min-[1120px]:flex min-[1120px]:max-w-[50vw] min-[1120px]:flex-1 min-[1120px]:flex-col min-[1120px]:justify-center min-[1120px]:px-12 min-[1120px]:py-12">
+            <h1 className="type-main-header max-w-full text-white">
+              Keep your home running at peak efficiency, season after season.
             </h1>
-            <p className="type-regular mt-5 max-w-full text-white md:mt-6 md:max-w-[44rem]">
-              AC repair, heating service, and system replacement with straightforward recommendations and upfront pricing.
-            </p>
             <div className="mt-8 hidden flex-col gap-3 sm:flex-row sm:items-center min-[1120px]:flex">
               <Link
                 className="hero-primary-cta inline-flex h-14 w-full items-center justify-center rounded-[6px] bg-[#cc0d0d] px-7 text-base font-extrabold uppercase tracking-[0.04em] text-white transition hover:bg-[#e11212] sm:w-auto"
@@ -294,6 +288,16 @@ export default function Home() {
               priority
               sizes="100vw"
             />
+          </div>
+          <div className="hero-info-panel px-4 py-7 md:px-9 md:py-8">
+            <p className="type-eyebrow max-w-full uppercase text-white">
+              Local HVAC Service in Huntersville, NC
+            </p>
+            <p className="type-small mt-5 max-w-[38rem] text-white">
+              Schedule AC repair, heating service, tune-ups, or system
+              replacement with local technicians who explain the issue clearly
+              and give you options before the work starts.
+            </p>
           </div>
         </div>
 
