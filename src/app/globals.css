@@ -820,8 +820,8 @@ body {
   }
 
   .hero-info-panel {
-    width: calc(min(42rem, 44vw) + ((100dvw - min(calc(100dvw - 1rem), 111rem)) / 2));
-    margin-left: calc((100dvw - min(calc(100dvw - 1rem), 111rem)) / -2);
+    width: calc(min(31.5rem, 33vw) + 1rem);
+    margin-left: -1rem;
     padding: 2.25rem 2.25rem 2.25rem 3rem;
   }
 }

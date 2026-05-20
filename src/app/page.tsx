@@ -194,6 +194,9 @@ const socialLinks = [
 export default function Home() {
   return (
     <>
+      <div className="fixed left-3 top-3 z-[9999] rounded-[4px] bg-[#dc2626] px-3 py-2 text-sm font-bold text-white shadow-lg">
+        BUILD CHECK 123
+      </div>
       <header className="site-header z-50 bg-[var(--primary-blue)] text-white shadow-[0_18px_42px_rgba(21,36,53,0.16)]">
         <div className="site-header-inner mx-auto flex w-full items-center justify-between gap-5 px-4 min-[1120px]:w-[min(calc(100dvw-2rem),111rem)] min-[1120px]:px-1 min-[1120px]:py-3">
           <Link href="/" aria-label="North Star HVAC home" className="inline-flex w-fit">
